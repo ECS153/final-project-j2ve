@@ -1,11 +1,3 @@
-//
-//  SceneDelegate.swift
-//  PasswordManager
-//
-//  Created by Vivienne Zing on 5/8/20.
-//  Copyright © 2020 Vivienne Zing. All rights reserved.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
