@@ -13,6 +13,8 @@
 		40BFAB8E2465D7C200093BED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40BFAB8C2465D7C200093BED /* Main.storyboard */; };
 		40BFAB902465D7C400093BED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40BFAB8F2465D7C400093BED /* Assets.xcassets */; };
 		40BFAB932465D7C400093BED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40BFAB912465D7C400093BED /* LaunchScreen.storyboard */; };
+		979A7EC8246B4D9200C1A12C /* CreateNewAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979A7EC6246B4D9200C1A12C /* CreateNewAccount.swift */; };
+		979A7EC9246B4D9200C1A12C /* CreateNewAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 979A7EC7246B4D9200C1A12C /* CreateNewAccount.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		40BFAB8F2465D7C400093BED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40BFAB922465D7C400093BED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		40BFAB942465D7C400093BED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		979A7EC6246B4D9200C1A12C /* CreateNewAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewAccount.swift; sourceTree = "<group>"; };
+		979A7EC7246B4D9200C1A12C /* CreateNewAccount.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateNewAccount.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				40BFAB8F2465D7C400093BED /* Assets.xcassets */,
 				40BFAB912465D7C400093BED /* LaunchScreen.storyboard */,
 				40BFAB942465D7C400093BED /* Info.plist */,
+				979A7EC7246B4D9200C1A12C /* CreateNewAccount.storyboard */,
+				979A7EC6246B4D9200C1A12C /* CreateNewAccount.swift */,
 			);
 			path = PasswordManager;
 			sourceTree = "<group>";
@@ -126,6 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40BFAB932465D7C400093BED /* LaunchScreen.storyboard in Resources */,
+				979A7EC9246B4D9200C1A12C /* CreateNewAccount.storyboard in Resources */,
 				40BFAB902465D7C400093BED /* Assets.xcassets in Resources */,
 				40BFAB8E2465D7C200093BED /* Main.storyboard in Resources */,
 			);
@@ -138,6 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				979A7EC8246B4D9200C1A12C /* CreateNewAccount.swift in Sources */,
 				40BFAB8B2465D7C200093BED /* ViewController.swift in Sources */,
 				40BFAB872465D7C200093BED /* AppDelegate.swift in Sources */,
 				40BFAB892465D7C200093BED /* SceneDelegate.swift in Sources */,
