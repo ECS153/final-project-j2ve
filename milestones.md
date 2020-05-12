@@ -1,7 +1,7 @@
-# final-project-j2ve
+# Milestone 1
 
-Meeting Docs
+Meeting Docs <br>
 https://docs.google.com/document/d/1SGBFLaFoMvBGPRDH6c8x52wOlGDZItCaP776J_452to/edit
 
-Design Docs links
-PRs links
+Video Link <br>
+(YouTube link or Google Drive link?)
