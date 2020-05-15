@@ -23,8 +23,8 @@
                                     <constraint firstAttribute="height" constant="175" id="dOQ-Ib-PP5"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="dKn-BH-zjC">
-                                <rect key="frame" x="50" y="389" width="314" height="281.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="dKn-BH-zjC">
+                                <rect key="frame" x="50" y="389" width="314" height="443"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zl7-cu-PhU">
                                         <rect key="frame" x="0.0" y="0.0" width="314" height="73"/>
@@ -46,7 +46,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zNI-dt-ahZ">
-                                        <rect key="frame" x="0.0" y="223" width="314" height="58.5"/>
+                                        <rect key="frame" x="0.0" y="384.5" width="314" height="58.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New here?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CLs-HX-cIs">
                                                 <rect key="frame" x="0.0" y="0.0" width="314" height="19.5"/>
@@ -70,6 +70,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dKn-BH-zjC" secondAttribute="bottom" constant="30" id="0XN-ne-oDe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dKn-BH-zjC" secondAttribute="trailing" constant="50" id="6Ea-ic-t4w"/>
                             <constraint firstItem="3RA-uA-mnc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="DM7-t3-mbb"/>
                             <constraint firstItem="dKn-BH-zjC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="UCR-PP-mv5"/>
