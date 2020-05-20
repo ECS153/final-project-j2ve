@@ -30,12 +30,11 @@ class CreateNewAccount: UIViewController, UITableViewDelegate {
   var questionCounter = 2
   var prevQuestionLabelPosX = 0
   var prevQuestionLabelPosY = 0
-  var newQuestionLabelPosX = 0
-  var newQuestionLabelPosY = 0
 
   var screenWidth = CGFloat(0)
   var screenHeight = CGFloat(0)
 
+  // Form data
   var questionTextFields = [UITextField]()
   var answerTextFields = [UITextField]()
   var emptyTextFieldFound = false
@@ -52,6 +51,8 @@ class CreateNewAccount: UIViewController, UITableViewDelegate {
     // Clear error messages when screen loads
     passwordErrorLabel.text = ""
     securityQuestionsErrorLabel.text = ""
+    passwordErrorLabel.textAlignment = .center;
+    securityQuestionsErrorLabel.textAlignment = .center;
   }
 
   @IBAction func valiateEmail(_ sender: UITextField) {
@@ -66,11 +67,15 @@ class CreateNewAccount: UIViewController, UITableViewDelegate {
   }
 
   @IBAction func createPassword(_ sender: Any) {
-    // TODO: Check if password length is too short & display the appropriate error message for that: "Password needs to be at least 6 characters."
+    if newPasswordTextField.text!.count < 6 {
+      passwordErrorLabel.text = "Password needs to be at least 6 characters."
+    }
+    else {
+      passwordErrorLabel.text = ""
+    }
   }
 
   @IBAction func repeatPassword(_ sender: UITextField) {
-    print("there's text here!")
     if !newPasswordTextField.text!.isEmpty {
       if newPasswordTextField!.text != repeatPasswordTextField.text {
         passwordErrorLabel.text = "Passwords do not match. Please try again."
@@ -128,6 +133,8 @@ class CreateNewAccount: UIViewController, UITableViewDelegate {
     addQuestionButton.center = CGPoint(x: Int(addQuestionButton.center.x), y: prevQuestionLabelPosY + 155)
     createAccountButton.center = CGPoint(x: Int(createAccountButton.center.x), y: prevQuestionLabelPosY + 220)
     securityQuestionsErrorLabel.center = CGPoint(x: Int(securityQuestionsErrorLabel.center.x), y: prevQuestionLabelPosY + 180)
+    // TODO: Programmatically update contraints for these 3 objects
+    addQuestionButton.topAnchor.constraint(equalTo: answerTextField.bottomAnchor)
 
     // Update variables and screen size
     questionCounter += 1
@@ -141,10 +148,9 @@ class CreateNewAccount: UIViewController, UITableViewDelegate {
   @IBAction func createAccount(_ sender: Any) {
     if (questionCounter < 3) {
       securityQuestionsErrorLabel.text = "Please create at least 3 security questions."
-      // TODO: Also need to check that all Question & Answer text fields actually have text in them.
-      // securityQuestionsErrorLabel.text = "Please fill in all fields."
     }
     else {
+      // Check that all text fields have been filled in.
       for textField in questionTextFields {
         if textField.text!.isEmpty {
           emptyTextFieldFound = true
@@ -167,7 +173,7 @@ class CreateNewAccount: UIViewController, UITableViewDelegate {
         securityQuestionsErrorLabel.text = ""
       }
 
-      // TODO: Check that ALL error messages are empty. If they are, then Segue to Accounts screen.
+      // TODO: If there are no more error messages, then segue to the Accounts screen.
       if passwordErrorLabel.text!.isEmpty && securityQuestionsErrorLabel.text!.isEmpty {
         print("Success! You can create a new account.")
       }
