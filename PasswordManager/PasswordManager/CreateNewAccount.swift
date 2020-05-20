@@ -5,6 +5,19 @@
 //  Created by Joanne Chang.
 //
 
+// The following are low priority tasks:
+// TODO: Option to remove a Security Question, question/answer text field pair.
+// TODO: Dropdown to select some premade Security Question.
+// TODO: Center constrain the "Sign Up" and "Security Questions" headers.
+// TODO: Update error checking to be while the user is typing, and not after.
+// (There is a bug in which the user can "trick" the app into thinking that all fields had been entered properly.)
+// TODO: Make text field border colors be the same shade of light gray.
+// TODO: Generated question/answer text fields should not have a fixed width.
+// TODO: Space the question/answer text fields better so that they look nicer.
+
+// The following are higher priority tasks:
+// TODO: Save text field data into some data structure and send to Firebase.
+
 import UIKit
 
 class CreateNewAccount: UIViewController, UITableViewDelegate {
@@ -45,12 +58,12 @@ class CreateNewAccount: UIViewController, UITableViewDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
     prevQuestionLabelPosX = Int(answerOneTextField.frame.minX) + 100
-    prevQuestionLabelPosY = Int(answerOneTextField.center.y) + 50
+    prevQuestionLabelPosY = Int(answerOneTextField.center.y) + 25
 
     let screensize: CGRect = UIScreen.main.bounds
     screenWidth = screensize.width
     screenHeight = screensize.height
-    prevConstraint = addQuestionButton.topAnchor.constraint(equalTo: answerOneTextField.bottomAnchor)
+    prevConstraint = addQuestionButton.topAnchor.constraint(equalTo: answerOneTextField.bottomAnchor, constant: 20)
     prevConstraint!.isActive = true
 
     // Clear error messages when screen loads
@@ -115,13 +128,13 @@ class CreateNewAccount: UIViewController, UITableViewDelegate {
 
     // Set up form for a new Answer
     let answerLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-    answerLabel.center = CGPoint(x: prevQuestionLabelPosX, y: prevQuestionLabelPosY + 80)
+    answerLabel.center = CGPoint(x: prevQuestionLabelPosX, y: prevQuestionLabelPosY + 75)
     answerLabel.textAlignment = .left
     answerLabel.text = "Answer"
     scrollView.addSubview(answerLabel)
 
     let answerTextField = UITextField(frame: CGRect(x: 0, y: 0, width: 375, height: 34))
-    answerTextField.center = CGPoint(x: prevQuestionLabelPosX + 90, y: prevQuestionLabelPosY + 115)
+    answerTextField.center = CGPoint(x: prevQuestionLabelPosX + 90, y: prevQuestionLabelPosY + 110)
     answerTextField.layer.cornerRadius = 5.0
     answerTextField.layer.borderWidth = 2.0
     answerTextField.layer.borderWidth = 1.0
@@ -149,7 +162,7 @@ class CreateNewAccount: UIViewController, UITableViewDelegate {
 
     // Update constraint of addQuestionButton
     prevConstraint!.isActive = false
-    prevConstraint = addQuestionButton.topAnchor.constraint(equalTo: answerTextField.bottomAnchor)
+    prevConstraint = addQuestionButton.topAnchor.constraint(equalTo: answerTextField.bottomAnchor, constant: 20)
     prevConstraint!.isActive = true
   }
 
