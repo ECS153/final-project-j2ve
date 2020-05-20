@@ -39,6 +39,9 @@ class CreateNewAccount: UIViewController, UITableViewDelegate {
   var answerTextFields = [UITextField]()
   var emptyTextFieldFound = false
 
+  // Top anchor constraint for addQuestionButton
+  var prevConstraint: NSLayoutConstraint? = nil
+
   override func viewDidLoad() {
     super.viewDidLoad()
     prevQuestionLabelPosX = Int(answerOneTextField.frame.minX) + 100
@@ -47,6 +50,8 @@ class CreateNewAccount: UIViewController, UITableViewDelegate {
     let screensize: CGRect = UIScreen.main.bounds
     screenWidth = screensize.width
     screenHeight = screensize.height
+    prevConstraint = addQuestionButton.topAnchor.constraint(equalTo: answerOneTextField.bottomAnchor)
+    prevConstraint!.isActive = true
 
     // Clear error messages when screen loads
     passwordErrorLabel.text = ""
@@ -133,8 +138,6 @@ class CreateNewAccount: UIViewController, UITableViewDelegate {
     addQuestionButton.center = CGPoint(x: Int(addQuestionButton.center.x), y: prevQuestionLabelPosY + 155)
     createAccountButton.center = CGPoint(x: Int(createAccountButton.center.x), y: prevQuestionLabelPosY + 220)
     securityQuestionsErrorLabel.center = CGPoint(x: Int(securityQuestionsErrorLabel.center.x), y: prevQuestionLabelPosY + 180)
-    // TODO: Programmatically update contraints for these 3 objects
-    addQuestionButton.topAnchor.constraint(equalTo: answerTextField.bottomAnchor)
 
     // Update variables and screen size
     questionCounter += 1
@@ -143,6 +146,11 @@ class CreateNewAccount: UIViewController, UITableViewDelegate {
     scrollView.contentSize = CGSize(width: screenWidth, height: screenHeight)
     questionTextFields.append(questionTextField)
     answerTextFields.append(answerTextField)
+
+    // Update constraint of addQuestionButton
+    prevConstraint!.isActive = false
+    prevConstraint = addQuestionButton.topAnchor.constraint(equalTo: answerTextField.bottomAnchor)
+    prevConstraint!.isActive = true
   }
 
   @IBAction func createAccount(_ sender: Any) {

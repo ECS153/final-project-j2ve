@@ -120,20 +120,20 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3zO-4m-Abf">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3zO-4m-Abf">
                                         <rect key="frame" x="157" y="561.33333333333337" width="103" height="30"/>
                                         <state key="normal" title="Add a question"/>
                                         <connections>
                                             <action selector="addQuestion:" destination="M8y-Eu-QU4" eventType="touchUpInside" id="G1G-fe-tOl"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Security Questions Error Message" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xj8-Kl-bPg">
-                                        <rect key="frame" x="22" y="601.33333333333337" width="374" height="20.333333333333371"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Security Questions Error Message" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xj8-Kl-bPg">
+                                        <rect key="frame" x="22" y="601.33333333333326" width="374" height="20.333333333333371"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cts-yR-aSY">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cts-yR-aSY">
                                         <rect key="frame" x="147" y="641.66666666666663" width="125" height="30"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -169,7 +169,6 @@
                                     <constraint firstItem="Znn-Vt-ngg" firstAttribute="leading" secondItem="4DJ-Cb-RfE" secondAttribute="leading" constant="20" id="Bwg-BS-gbd"/>
                                     <constraint firstItem="LLO-ke-ItU" firstAttribute="top" secondItem="Haz-NM-sO8" secondAttribute="bottom" constant="5" id="C98-vh-EJu"/>
                                     <constraint firstItem="eAD-DY-R66" firstAttribute="leading" secondItem="4DJ-Cb-RfE" secondAttribute="leading" constant="20" id="DED-xa-m16"/>
-                                    <constraint firstItem="3zO-4m-Abf" firstAttribute="top" secondItem="LLO-ke-ItU" secondAttribute="bottom" constant="15" id="DQD-E1-3pB"/>
                                     <constraint firstItem="D9d-zY-DH8" firstAttribute="leading" secondItem="4DJ-Cb-RfE" secondAttribute="leading" constant="129" id="DQz-BQ-rfF"/>
                                     <constraint firstItem="eAD-DY-R66" firstAttribute="top" secondItem="TzA-Qq-gVe" secondAttribute="bottom" constant="5" id="Dun-Ag-rAW"/>
                                     <constraint firstItem="m3i-wP-JVd" firstAttribute="top" secondItem="xKp-2I-ced" secondAttribute="top" constant="10" id="EhT-th-vIy"/>
