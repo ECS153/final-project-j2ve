@@ -12,10 +12,7 @@ Meeting Doc <br>
 https://docs.google.com/document/d/15UXal3JXc34ge13w-i_6qLE5wDE-_ZWgj1v-l2eYGZU/
 
 Video Link <br>
-[URL goes here]
+https://drive.google.com/file/d/1kA6nYXGR01Z8mjzQjYEzLxbZQJevFleX/view?usp=sharing
 
-PRs <br>
-[links go here]
-
-Design Docs<br>
-[links go here]
+Design Docs so far<br>
+https://docs.google.com/document/d/10mKpiqcam95FZzSiBO-AnoDZxPP9gHr8cf-kGvTZx6g/edit?usp=sharing
