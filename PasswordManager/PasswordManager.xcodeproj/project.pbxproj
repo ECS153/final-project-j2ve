@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4069495D247812F40027C30A /* MasterAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4069495C247812F40027C30A /* MasterAccountModel.swift */; };
+		4069495F247814E60027C30A /* AppAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4069495E247814E60027C30A /* AppAccountModel.swift */; };
 		40BFAB872465D7C200093BED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BFAB862465D7C200093BED /* AppDelegate.swift */; };
 		40BFAB892465D7C200093BED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BFAB882465D7C200093BED /* SceneDelegate.swift */; };
 		40BFAB8B2465D7C200093BED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BFAB8A2465D7C200093BED /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4069495C247812F40027C30A /* MasterAccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterAccountModel.swift; sourceTree = "<group>"; };
+		4069495E247814E60027C30A /* AppAccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAccountModel.swift; sourceTree = "<group>"; };
 		40BFAB832465D7C200093BED /* PasswordManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasswordManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40BFAB862465D7C200093BED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40BFAB882465D7C200093BED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				40BFAB8F2465D7C400093BED /* Assets.xcassets */,
 				40BFAB912465D7C400093BED /* LaunchScreen.storyboard */,
 				40BFAB942465D7C400093BED /* Info.plist */,
+				4069495C247812F40027C30A /* MasterAccountModel.swift */,
+				4069495E247814E60027C30A /* AppAccountModel.swift */,
 			);
 			path = PasswordManager;
 			sourceTree = "<group>";
@@ -139,7 +145,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				40BFAB8B2465D7C200093BED /* ViewController.swift in Sources */,
+				4069495D247812F40027C30A /* MasterAccountModel.swift in Sources */,
 				40BFAB872465D7C200093BED /* AppDelegate.swift in Sources */,
+				4069495F247814E60027C30A /* AppAccountModel.swift in Sources */,
 				40BFAB892465D7C200093BED /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
