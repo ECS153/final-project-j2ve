@@ -14,9 +14,9 @@ class MasterAccountModel {
     var mastPassword: String
     var questions: [String?]
     var answers: [String?]
-    var regAppAccounts: [String?]
+    var regAppAccounts: [AppAccountModel]
     
-    init (email: String, mastPassword: String, questions: [String?], answers: [String?], regAppAccounts: [String?]) {
+    init (email: String, mastPassword: String, questions: [String?], answers: [String?], regAppAccounts: [AppAccountModel]) {
         self.email = email
         self.mastPassword = mastPassword
         self.questions = questions

@@ -41,6 +41,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		40BF1F6824784F3D00698E8E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4069495C247812F40027C30A /* MasterAccountModel.swift */,
+				4069495E247814E60027C30A /* AppAccountModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		40BFAB7A2465D7C200093BED = {
 			isa = PBXGroup;
 			children = (
@@ -67,8 +76,7 @@
 				40BFAB8F2465D7C400093BED /* Assets.xcassets */,
 				40BFAB912465D7C400093BED /* LaunchScreen.storyboard */,
 				40BFAB942465D7C400093BED /* Info.plist */,
-				4069495C247812F40027C30A /* MasterAccountModel.swift */,
-				4069495E247814E60027C30A /* AppAccountModel.swift */,
+				40BF1F6824784F3D00698E8E /* Models */,
 			);
 			path = PasswordManager;
 			sourceTree = "<group>";
