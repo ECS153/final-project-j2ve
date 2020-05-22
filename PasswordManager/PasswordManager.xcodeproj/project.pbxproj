@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40694961247818CF0027C30A /* AddNewAccViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40694960247818CF0027C30A /* AddNewAccViewController.storyboard */; };
+		40694963247818E10027C30A /* AddNewAccViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40694962247818E10027C30A /* AddNewAccViewController.swift */; };
 		40BFAB872465D7C200093BED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BFAB862465D7C200093BED /* AppDelegate.swift */; };
 		40BFAB892465D7C200093BED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BFAB882465D7C200093BED /* SceneDelegate.swift */; };
 		40BFAB8B2465D7C200093BED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BFAB8A2465D7C200093BED /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		40694960247818CF0027C30A /* AddNewAccViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddNewAccViewController.storyboard; sourceTree = "<group>"; };
+		40694962247818E10027C30A /* AddNewAccViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewAccViewController.swift; sourceTree = "<group>"; };
 		40BFAB832465D7C200093BED /* PasswordManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasswordManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40BFAB862465D7C200093BED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40BFAB882465D7C200093BED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +41,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		40694964247818EE0027C30A /* AddNewAccViewController */ = {
+			isa = PBXGroup;
+			children = (
+				40694960247818CF0027C30A /* AddNewAccViewController.storyboard */,
+				40694962247818E10027C30A /* AddNewAccViewController.swift */,
+			);
+			path = AddNewAccViewController;
+			sourceTree = "<group>";
+		};
 		40BFAB7A2465D7C200093BED = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +69,7 @@
 		40BFAB852465D7C200093BED /* PasswordManager */ = {
 			isa = PBXGroup;
 			children = (
+				40694964247818EE0027C30A /* AddNewAccViewController */,
 				40BFAB862465D7C200093BED /* AppDelegate.swift */,
 				40BFAB882465D7C200093BED /* SceneDelegate.swift */,
 				40BFAB8A2465D7C200093BED /* ViewController.swift */,
@@ -126,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40BFAB932465D7C400093BED /* LaunchScreen.storyboard in Resources */,
+				40694961247818CF0027C30A /* AddNewAccViewController.storyboard in Resources */,
 				40BFAB902465D7C400093BED /* Assets.xcassets in Resources */,
 				40BFAB8E2465D7C200093BED /* Main.storyboard in Resources */,
 			);
@@ -138,6 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40694963247818E10027C30A /* AddNewAccViewController.swift in Sources */,
 				40BFAB8B2465D7C200093BED /* ViewController.swift in Sources */,
 				40BFAB872465D7C200093BED /* AppDelegate.swift in Sources */,
 				40BFAB892465D7C200093BED /* SceneDelegate.swift in Sources */,
