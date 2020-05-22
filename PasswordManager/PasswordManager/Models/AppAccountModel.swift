@@ -15,14 +15,14 @@ class AppAccountModel {
     var username: String?
     var email: String?
     var password: String
-    var iOSunivLink: String
+    // var iOSunivLink: String
     
-    init (appName: String, username: String?, email: String?, password: String, iOSunivLink:String) {
+    init (appName: String, username: String?, email: String?, password: String) {
         self.appName = appName
         self.username = username
         self.email = email
         self.password = password
-        self.iOSunivLink = iOSunivLink
+        // self.iOSunivLink = iOSunivLink
     }
     
     // init(id: String, data: NSDictionary)
