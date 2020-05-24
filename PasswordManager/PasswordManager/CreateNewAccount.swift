@@ -19,6 +19,7 @@
 // TODO: Save text field data into some data structure and send to Firebase.
 
 import UIKit
+import Firebase
 
 class CreateNewAccount: UIViewController, UITableViewDelegate {
 
@@ -197,6 +198,18 @@ class CreateNewAccount: UIViewController, UITableViewDelegate {
       // TODO: If there are no more error messages, then segue to the Accounts screen.
       if passwordErrorLabel.text!.isEmpty && securityQuestionsErrorLabel.text!.isEmpty {
         print("Success! You can create a new account.")
+
+        guard let email = emailTextField.text else { return }
+        guard let pass = newPasswordTextField.text else { return }
+
+        Auth.auth().createUser(withEmail: email, password: pass) { user, error in
+          if error == nil && user != nil {
+            print ("User created!")
+          }
+          else {
+            print("Error creating user")
+          }
+        }
       }
     }
   }
