@@ -215,25 +215,29 @@ class CreateNewAccount: UIViewController, UITableViewDelegate {
 
         let db = Firestore.firestore()
         let userID = result!.user.uid
+//        var userRef: DocumentReference!
+//        var appAccountModelName: String
 
-//        let firstName = "edelgard"
-//        let lastName = "hresvelg"
-//
-//        db.collection("users").addDocument(data: ["firstname": firstName, "lastname": lastName, "uid": result!.user.uid]) { err in
-//
-//          if err != nil {
-//            print("User data couldn't be saved to database")
-//          }
-//        }
+        // Reference to document ID for AppAccountModel ?
+//        let refString = db.collection("MasterAccountModel").document(userID)
+//        appAccountModelName = "AppAccountModel" + userID
+//        userRef = db.document("\(appAccountModelName)/\(refString)")
 
-        // TODO: create a Collection -> AppAccountModel
-        // TODO: make a reference to that new Collection
-        // TODO: add that Reference to the Document below
-
-        db.collection("MasterAccountModels").document(userID).setData([
+        // Create a new document about this new user and add it to the database.
+        db.collection("MasterAccountModel").document(userID).setData([
           "Email": email,
           "MasterPassword": pass,
-          "country": "Adrestia"
+          "QandAs": [
+              "Q1": [
+                  "Question": "i need a loop here",
+                  "Answer": "i need a loop here"
+              ],
+              "Q2": [
+                  "Question": "i need a loop here",
+                  "Answer": "i need a loop here"
+              ]
+          ],
+          "RegAccounts": []
         ]) { err in
           if let err = err {
             print("Error writing document: \(err)")
@@ -241,9 +245,6 @@ class CreateNewAccount: UIViewController, UITableViewDelegate {
             print("Document successfully written!")
           }
         }
-
-
-
       }
       else {
         print("Error creating user")
