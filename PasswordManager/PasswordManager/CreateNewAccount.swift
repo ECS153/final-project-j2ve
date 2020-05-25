@@ -5,21 +5,10 @@
 //  Created by Joanne Chang.
 //
 
-// The following are low priority tasks:
-// TODO: Option to remove a Security Question, question/answer text field pair.
-// TODO: Dropdown to select some premade Security Question.
-// TODO: Center constrain the "Sign Up" and "Security Questions" headers.
-// TODO: Update error checking to be while the user is typing, and not after.
-// (There is a bug in which the user can "trick" the app into thinking that all fields had been entered properly.)
-// TODO: Space the question/answer text fields better so that they look nicer.
-
-// The following are higher priority tasks:
-// TODO: Save text field data into some data structure and send to Firebase.
-
 import UIKit
 import Firebase
 
-class CreateNewAccount: UIViewController, UITableViewDelegate {
+class CreateNewAccount: UIViewController, UITableViewDelegate, UITextFieldDelegate {
 
   @IBOutlet weak var scrollView: UIScrollView!
 
@@ -30,6 +19,8 @@ class CreateNewAccount: UIViewController, UITableViewDelegate {
   @IBOutlet weak var passwordErrorLabel: UILabel!
 
   // Outlets for Security Questions section
+  @IBOutlet weak var questionOneLabel: UILabel!
+  @IBOutlet weak var answerOneLabel: UILabel!
   @IBOutlet weak var questionOneTextField: UITextField!
   @IBOutlet weak var answerOneTextField: UITextField!
   @IBOutlet weak var addQuestionButton: UIButton!
@@ -54,10 +45,15 @@ class CreateNewAccount: UIViewController, UITableViewDelegate {
   // Top anchor constraint for addQuestionButton
   var prevConstraint: NSLayoutConstraint? = nil
 
+  // Limit of characters allowed for text fields
+  // The max email length is 254 characters
+  // And security questions over 254 characters are probably too long to be good questions
+  let maxCharacters = 254
+
   override func viewDidLoad() {
     super.viewDidLoad()
-    prevQuestionLabelPosX = Int(answerOneTextField.frame.minX) + 100
-    prevQuestionLabelPosY = Int(answerOneTextField.center.y) + 25
+    prevQuestionLabelPosX = Int(answerOneTextField.frame.minX) + 95
+    prevQuestionLabelPosY = Int(answerOneTextField.center.y) + 35
 
     let screensize: CGRect = UIScreen.main.bounds
     screenWidth = screensize.width
@@ -68,11 +64,27 @@ class CreateNewAccount: UIViewController, UITableViewDelegate {
     // Clear error messages when screen loads
     passwordErrorLabel.text = ""
     securityQuestionsErrorLabel.text = ""
-    passwordErrorLabel.textAlignment = .center;
-    securityQuestionsErrorLabel.textAlignment = .center;
+    passwordErrorLabel.textAlignment = .center
+    securityQuestionsErrorLabel.textAlignment = .center
+    questionOneLabel.font = UIFont.italicSystemFont(ofSize: 16.0)
+    answerOneLabel.font = .systemFont(ofSize: 16.0)
+
+    emailTextField.delegate = self
+    newPasswordTextField.delegate = self
+    repeatPasswordTextField.delegate = self
   }
 
-  @IBAction func valiateEmail(_ sender: UITextField) {
+  func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    let newLength = (textField.text?.utf16.count)! + string.utf16.count - range.length
+      if(newLength <= maxCharacters){
+        return true
+      }
+      else {
+        return false
+      }
+  }
+
+  @IBAction func validateEmail(_ sender: UITextField) {
     let emailFormat = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
     let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailFormat)
     if !emailPredicate.evaluate(with: emailTextField.text) {
@@ -83,7 +95,7 @@ class CreateNewAccount: UIViewController, UITableViewDelegate {
     }
   }
 
-  @IBAction func createPassword(_ sender: Any) {
+  @IBAction func createPassword(_ sender: UITextField) {
     if newPasswordTextField.text!.count < 6 {
       passwordErrorLabel.text = "Password needs to be at least 6 characters."
     }
@@ -106,9 +118,10 @@ class CreateNewAccount: UIViewController, UITableViewDelegate {
   @IBAction func addQuestion(_ sender: Any) {
     // Set up form for a new Question
     let questionLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-    questionLabel.center = CGPoint(x: prevQuestionLabelPosX, y: prevQuestionLabelPosY)
+    questionLabel.center = CGPoint(x: prevQuestionLabelPosX + 7, y: prevQuestionLabelPosY)
     questionLabel.textAlignment = .left
     questionLabel.text = "Question " + String(questionCounter)
+    questionLabel.font = UIFont.italicSystemFont(ofSize: 16.0)
     scrollView.addSubview(questionLabel)
 
     let questionTextField = UITextField(frame: CGRect(x: 0, y: 0, width: questionOneTextField.frame.size.width, height: questionOneTextField.frame.size.height))
@@ -121,15 +134,16 @@ class CreateNewAccount: UIViewController, UITableViewDelegate {
     let paddingQuestionView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: questionTextField.frame.height))
     questionTextField.leftView = paddingQuestionView
     questionTextField.leftViewMode = UITextField.ViewMode.always
-    questionTextField.font = .systemFont(ofSize: 14)
+    questionTextField.font = .systemFont(ofSize: 14.0)
     questionTextField.clearButtonMode = .always
     scrollView.addSubview(questionTextField)
 
     // Set up form for a new Answer
     let answerLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-    answerLabel.center = CGPoint(x: prevQuestionLabelPosX, y: prevQuestionLabelPosY + 75)
+    answerLabel.center = CGPoint(x: prevQuestionLabelPosX + 7, y: prevQuestionLabelPosY + 75)
     answerLabel.textAlignment = .left
     answerLabel.text = "Answer"
+    answerLabel.font = .systemFont(ofSize: 16.0)
     scrollView.addSubview(answerLabel)
 
     let answerTextField = UITextField(frame: CGRect(x: 0, y: 0, width: answerOneTextField.frame.size.width, height: answerOneTextField.frame.size.height))
@@ -142,7 +156,7 @@ class CreateNewAccount: UIViewController, UITableViewDelegate {
     let paddingAnswerView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: questionTextField.frame.height))
     answerTextField.leftView = paddingAnswerView
     answerTextField.leftViewMode = UITextField.ViewMode.always
-    answerTextField.font = .systemFont(ofSize: 14)
+    answerTextField.font = .systemFont(ofSize: 14.0)
     answerTextField.clearButtonMode = .always
     scrollView.addSubview(answerTextField)
 
@@ -153,7 +167,7 @@ class CreateNewAccount: UIViewController, UITableViewDelegate {
 
     // Update variables and screen size
     questionCounter += 1
-    prevQuestionLabelPosY += 160
+    prevQuestionLabelPosY += 170
     screenHeight = createAccountButton.center.y + 50
     scrollView.contentSize = CGSize(width: screenWidth, height: screenHeight)
     questionTextFields.append(questionTextField)
@@ -193,7 +207,7 @@ class CreateNewAccount: UIViewController, UITableViewDelegate {
         securityQuestionsErrorLabel.text = ""
       }
 
-      // If there are no more error messages, then segue to the Accounts screen.
+      // If there are no more error messages, then segue to the Accounts screen
       if passwordErrorLabel.text!.isEmpty && securityQuestionsErrorLabel.text!.isEmpty {
         print("Success! You can create a new account.")
 
