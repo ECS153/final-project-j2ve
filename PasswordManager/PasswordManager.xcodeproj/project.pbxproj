@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		118A30CFB32A39D635AA40EB /* Pods_PasswordManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08D471276505C6D42E3B7F78 /* Pods_PasswordManager.framework */; };
 		0728FE9624712995009305D3 /* RegisteredAccountsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0728FE9524712995009305D3 /* RegisteredAccountsView.storyboard */; };
 		0728FE982471349B009305D3 /* RegisteredAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0728FE972471349B009305D3 /* RegisteredAccounts.swift */; };
 		0728FE9A2478659E009305D3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0728FE992478659D009305D3 /* GoogleService-Info.plist */; };
@@ -86,6 +87,8 @@
 		40BFAB852465D7C200093BED /* PasswordManager */ = {
 			isa = PBXGroup;
 			children = (
+				97F02A9D247B3D98005C3DC3 /* Podfile */,
+				979CCB64247B3D5C0023F2AB /* GoogleService-Info.plist */,
 				40BFAB862465D7C200093BED /* AppDelegate.swift */,
 				40BFAB882465D7C200093BED /* SceneDelegate.swift */,
 				40BFAB8A2465D7C200093BED /* ViewController.swift */,
@@ -96,8 +99,18 @@
 				40BFAB8F2465D7C400093BED /* Assets.xcassets */,
 				40BFAB912465D7C400093BED /* LaunchScreen.storyboard */,
 				40BFAB942465D7C400093BED /* Info.plist */,
+				979A7EC7246B4D9200C1A12C /* CreateNewAccount.storyboard */,
+				979A7EC6246B4D9200C1A12C /* CreateNewAccount.swift */,
 			);
 			path = PasswordManager;
+			sourceTree = "<group>";
+		};
+		6B48424FB8F94C84AD34E05A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				08D471276505C6D42E3B7F78 /* Pods_PasswordManager.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,7 +173,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97F02A9E247B3D98005C3DC3 /* Podfile in Resources */,
 				40BFAB932465D7C400093BED /* LaunchScreen.storyboard in Resources */,
+				979A7EC9246B4D9200C1A12C /* CreateNewAccount.storyboard in Resources */,
+				979CCB65247B3D5C0023F2AB /* GoogleService-Info.plist in Resources */,
 				40BFAB902465D7C400093BED /* Assets.xcassets in Resources */,
 				0728FE9A2478659E009305D3 /* GoogleService-Info.plist in Resources */,
 				40BFAB8E2465D7C200093BED /* Main.storyboard in Resources */,
@@ -217,6 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				979A7EC8246B4D9200C1A12C /* CreateNewAccount.swift in Sources */,
 				40BFAB8B2465D7C200093BED /* ViewController.swift in Sources */,
 				0728FE982471349B009305D3 /* RegisteredAccounts.swift in Sources */,
 				40BFAB872465D7C200093BED /* AppDelegate.swift in Sources */,
