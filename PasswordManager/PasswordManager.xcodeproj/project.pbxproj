@@ -3,25 +3,28 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		118A30CFB32A39D635AA40EB /* Pods_PasswordManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08D471276505C6D42E3B7F78 /* Pods_PasswordManager.framework */; };
+		0728FE9624712995009305D3 /* RegisteredAccountsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0728FE9524712995009305D3 /* RegisteredAccountsView.storyboard */; };
+		0728FE982471349B009305D3 /* RegisteredAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0728FE972471349B009305D3 /* RegisteredAccounts.swift */; };
+		0728FE9A2478659E009305D3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0728FE992478659D009305D3 /* GoogleService-Info.plist */; };
 		40BFAB872465D7C200093BED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BFAB862465D7C200093BED /* AppDelegate.swift */; };
 		40BFAB892465D7C200093BED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BFAB882465D7C200093BED /* SceneDelegate.swift */; };
 		40BFAB8B2465D7C200093BED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BFAB8A2465D7C200093BED /* ViewController.swift */; };
 		40BFAB8E2465D7C200093BED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40BFAB8C2465D7C200093BED /* Main.storyboard */; };
 		40BFAB902465D7C400093BED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40BFAB8F2465D7C400093BED /* Assets.xcassets */; };
 		40BFAB932465D7C400093BED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40BFAB912465D7C400093BED /* LaunchScreen.storyboard */; };
-		979A7EC8246B4D9200C1A12C /* CreateNewAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979A7EC6246B4D9200C1A12C /* CreateNewAccount.swift */; };
-		979A7EC9246B4D9200C1A12C /* CreateNewAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 979A7EC7246B4D9200C1A12C /* CreateNewAccount.storyboard */; };
-		979CCB65247B3D5C0023F2AB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 979CCB64247B3D5C0023F2AB /* GoogleService-Info.plist */; };
-		97F02A9E247B3D98005C3DC3 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 97F02A9D247B3D98005C3DC3 /* Podfile */; };
+		5B393524C29624184AF3ABA5 /* Pods_PasswordManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9E5978FD417F3709C685BC7 /* Pods_PasswordManager.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		08D471276505C6D42E3B7F78 /* Pods_PasswordManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PasswordManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0728FE9524712995009305D3 /* RegisteredAccountsView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisteredAccountsView.storyboard; sourceTree = "<group>"; };
+		0728FE972471349B009305D3 /* RegisteredAccounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisteredAccounts.swift; sourceTree = "<group>"; };
+		0728FE992478659D009305D3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		25B62593183B43C73DD85AD0 /* Pods-PasswordManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PasswordManager.debug.xcconfig"; path = "Target Support Files/Pods-PasswordManager/Pods-PasswordManager.debug.xcconfig"; sourceTree = "<group>"; };
 		40BFAB832465D7C200093BED /* PasswordManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasswordManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40BFAB862465D7C200093BED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40BFAB882465D7C200093BED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,12 +33,8 @@
 		40BFAB8F2465D7C400093BED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40BFAB922465D7C400093BED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		40BFAB942465D7C400093BED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		979A7EC6246B4D9200C1A12C /* CreateNewAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewAccount.swift; sourceTree = "<group>"; };
-		979A7EC7246B4D9200C1A12C /* CreateNewAccount.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateNewAccount.storyboard; sourceTree = "<group>"; };
-		979CCB64247B3D5C0023F2AB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
-		97F02A9D247B3D98005C3DC3 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
-		B28AF1B491E5A9A968DBA2AB /* Pods-PasswordManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PasswordManager.debug.xcconfig"; path = "Target Support Files/Pods-PasswordManager/Pods-PasswordManager.debug.xcconfig"; sourceTree = "<group>"; };
-		CA3B48EE38464AF969CCCDFC /* Pods-PasswordManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PasswordManager.release.xcconfig"; path = "Target Support Files/Pods-PasswordManager/Pods-PasswordManager.release.xcconfig"; sourceTree = "<group>"; };
+		A1DBBC36F470F68E6488E371 /* Pods-PasswordManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PasswordManager.release.xcconfig"; path = "Target Support Files/Pods-PasswordManager/Pods-PasswordManager.release.xcconfig"; sourceTree = "<group>"; };
+		F9E5978FD417F3709C685BC7 /* Pods_PasswordManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PasswordManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,21 +42,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				118A30CFB32A39D635AA40EB /* Pods_PasswordManager.framework in Frameworks */,
+				5B393524C29624184AF3ABA5 /* Pods_PasswordManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3351E4EE11A03C28F091539E /* Pods */ = {
+		0FFB22A7E7B3FC4B79B2E5E0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B28AF1B491E5A9A968DBA2AB /* Pods-PasswordManager.debug.xcconfig */,
-				CA3B48EE38464AF969CCCDFC /* Pods-PasswordManager.release.xcconfig */,
+				25B62593183B43C73DD85AD0 /* Pods-PasswordManager.debug.xcconfig */,
+				A1DBBC36F470F68E6488E371 /* Pods-PasswordManager.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		1A06180974B14390E42C6F44 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F9E5978FD417F3709C685BC7 /* Pods_PasswordManager.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		40BFAB7A2465D7C200093BED = {
@@ -65,8 +71,8 @@
 			children = (
 				40BFAB852465D7C200093BED /* PasswordManager */,
 				40BFAB842465D7C200093BED /* Products */,
-				3351E4EE11A03C28F091539E /* Pods */,
-				6B48424FB8F94C84AD34E05A /* Frameworks */,
+				0FFB22A7E7B3FC4B79B2E5E0 /* Pods */,
+				1A06180974B14390E42C6F44 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,7 +92,10 @@
 				40BFAB862465D7C200093BED /* AppDelegate.swift */,
 				40BFAB882465D7C200093BED /* SceneDelegate.swift */,
 				40BFAB8A2465D7C200093BED /* ViewController.swift */,
+				0728FE992478659D009305D3 /* GoogleService-Info.plist */,
 				40BFAB8C2465D7C200093BED /* Main.storyboard */,
+				0728FE9524712995009305D3 /* RegisteredAccountsView.storyboard */,
+				0728FE972471349B009305D3 /* RegisteredAccounts.swift */,
 				40BFAB8F2465D7C400093BED /* Assets.xcassets */,
 				40BFAB912465D7C400093BED /* LaunchScreen.storyboard */,
 				40BFAB942465D7C400093BED /* Info.plist */,
@@ -111,11 +120,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 40BFAB972465D7C400093BED /* Build configuration list for PBXNativeTarget "PasswordManager" */;
 			buildPhases = (
-				BE82D322ED1F7DB45C26BAAC /* [CP] Check Pods Manifest.lock */,
+				74674D7045FD07F35476F880 /* [CP] Check Pods Manifest.lock */,
 				40BFAB7F2465D7C200093BED /* Sources */,
 				40BFAB802465D7C200093BED /* Frameworks */,
 				40BFAB812465D7C200093BED /* Resources */,
-				E525C0C57B8B3D4E37E82E6D /* [CP] Embed Pods Frameworks */,
+				67E5AB32A2177D1147CB038B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -169,14 +178,33 @@
 				979A7EC9246B4D9200C1A12C /* CreateNewAccount.storyboard in Resources */,
 				979CCB65247B3D5C0023F2AB /* GoogleService-Info.plist in Resources */,
 				40BFAB902465D7C400093BED /* Assets.xcassets in Resources */,
+				0728FE9A2478659E009305D3 /* GoogleService-Info.plist in Resources */,
 				40BFAB8E2465D7C200093BED /* Main.storyboard in Resources */,
+				0728FE9624712995009305D3 /* RegisteredAccountsView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		BE82D322ED1F7DB45C26BAAC /* [CP] Check Pods Manifest.lock */ = {
+		67E5AB32A2177D1147CB038B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PasswordManager/Pods-PasswordManager-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PasswordManager/Pods-PasswordManager-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PasswordManager/Pods-PasswordManager-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		74674D7045FD07F35476F880 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -198,23 +226,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E525C0C57B8B3D4E37E82E6D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PasswordManager/Pods-PasswordManager-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PasswordManager/Pods-PasswordManager-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PasswordManager/Pods-PasswordManager-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -224,6 +235,7 @@
 			files = (
 				979A7EC8246B4D9200C1A12C /* CreateNewAccount.swift in Sources */,
 				40BFAB8B2465D7C200093BED /* ViewController.swift in Sources */,
+				0728FE982471349B009305D3 /* RegisteredAccounts.swift in Sources */,
 				40BFAB872465D7C200093BED /* AppDelegate.swift in Sources */,
 				40BFAB892465D7C200093BED /* SceneDelegate.swift in Sources */,
 			);
@@ -367,7 +379,7 @@
 		};
 		40BFAB982465D7C400093BED /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B28AF1B491E5A9A968DBA2AB /* Pods-PasswordManager.debug.xcconfig */;
+			baseConfigurationReference = 25B62593183B43C73DD85AD0 /* Pods-PasswordManager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -386,7 +398,7 @@
 		};
 		40BFAB992465D7C400093BED /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CA3B48EE38464AF969CCCDFC /* Pods-PasswordManager.release.xcconfig */;
+			baseConfigurationReference = A1DBBC36F470F68E6488E371 /* Pods-PasswordManager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
