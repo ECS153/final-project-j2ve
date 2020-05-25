@@ -195,21 +195,58 @@ class CreateNewAccount: UIViewController, UITableViewDelegate {
         securityQuestionsErrorLabel.text = ""
       }
 
-      // TODO: If there are no more error messages, then segue to the Accounts screen.
+      // If there are no more error messages, then segue to the Accounts screen.
       if passwordErrorLabel.text!.isEmpty && securityQuestionsErrorLabel.text!.isEmpty {
         print("Success! You can create a new account.")
 
-        guard let email = emailTextField.text else { return }
-        guard let pass = newPasswordTextField.text else { return }
+        handleSignUp()
+        // TODO: Segue to Accounts Screen
+      }
+    }
+  }
 
-        Auth.auth().createUser(withEmail: email, password: pass) { user, error in
-          if error == nil && user != nil {
-            print ("User created!")
-          }
-          else {
-            print("Error creating user")
+  func handleSignUp() {
+    guard let email = emailTextField.text else { return }
+    guard let pass = newPasswordTextField.text else { return }
+
+    Auth.auth().createUser(withEmail: email, password: pass) { result, error in
+      if error == nil && result != nil {
+        print ("User created!")
+
+        let db = Firestore.firestore()
+        let userID = result!.user.uid
+
+//        let firstName = "edelgard"
+//        let lastName = "hresvelg"
+//
+//        db.collection("users").addDocument(data: ["firstname": firstName, "lastname": lastName, "uid": result!.user.uid]) { err in
+//
+//          if err != nil {
+//            print("User data couldn't be saved to database")
+//          }
+//        }
+
+        // TODO: create a Collection -> AppAccountModel
+        // TODO: make a reference to that new Collection
+        // TODO: add that Reference to the Document below
+
+        db.collection("MasterAccountModels").document(userID).setData([
+          "Email": email,
+          "MasterPassword": pass,
+          "country": "Adrestia"
+        ]) { err in
+          if let err = err {
+            print("Error writing document: \(err)")
+          } else {
+            print("Document successfully written!")
           }
         }
+
+
+
+      }
+      else {
+        print("Error creating user")
       }
     }
   }
