@@ -7,10 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		118A30CFB32A39D635AA40EB /* Pods_PasswordManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08D471276505C6D42E3B7F78 /* Pods_PasswordManager.framework */; };
 		0728FE9624712995009305D3 /* RegisteredAccountsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0728FE9524712995009305D3 /* RegisteredAccountsView.storyboard */; };
 		0728FE982471349B009305D3 /* RegisteredAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0728FE972471349B009305D3 /* RegisteredAccounts.swift */; };
 		0728FE9A2478659E009305D3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0728FE992478659D009305D3 /* GoogleService-Info.plist */; };
+		40A71633247C711C008F75C0 /* CreateNewAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40A7162D247C711C008F75C0 /* CreateNewAccount.storyboard */; };
+		40A71634247C711C008F75C0 /* SecurityQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A7162E247C711C008F75C0 /* SecurityQuestions.swift */; };
+		40A71635247C711C008F75C0 /* CreateNewAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A7162F247C711C008F75C0 /* CreateNewAccount.swift */; };
+		40A71636247C711C008F75C0 /* loginPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40A71630247C711C008F75C0 /* loginPage.storyboard */; };
+		40A71637247C711C008F75C0 /* SecurityQuestions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40A71631247C711C008F75C0 /* SecurityQuestions.storyboard */; };
+		40A71638247C711C008F75C0 /* loginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A71632247C711C008F75C0 /* loginPage.swift */; };
 		40BFAB872465D7C200093BED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BFAB862465D7C200093BED /* AppDelegate.swift */; };
 		40BFAB892465D7C200093BED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BFAB882465D7C200093BED /* SceneDelegate.swift */; };
 		40BFAB8B2465D7C200093BED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BFAB8A2465D7C200093BED /* ViewController.swift */; };
@@ -25,6 +30,12 @@
 		0728FE972471349B009305D3 /* RegisteredAccounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisteredAccounts.swift; sourceTree = "<group>"; };
 		0728FE992478659D009305D3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		25B62593183B43C73DD85AD0 /* Pods-PasswordManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PasswordManager.debug.xcconfig"; path = "Target Support Files/Pods-PasswordManager/Pods-PasswordManager.debug.xcconfig"; sourceTree = "<group>"; };
+		40A7162D247C711C008F75C0 /* CreateNewAccount.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateNewAccount.storyboard; sourceTree = "<group>"; };
+		40A7162E247C711C008F75C0 /* SecurityQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecurityQuestions.swift; sourceTree = "<group>"; };
+		40A7162F247C711C008F75C0 /* CreateNewAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewAccount.swift; sourceTree = "<group>"; };
+		40A71630247C711C008F75C0 /* loginPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = loginPage.storyboard; sourceTree = "<group>"; };
+		40A71631247C711C008F75C0 /* SecurityQuestions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SecurityQuestions.storyboard; sourceTree = "<group>"; };
+		40A71632247C711C008F75C0 /* loginPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loginPage.swift; sourceTree = "<group>"; };
 		40BFAB832465D7C200093BED /* PasswordManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasswordManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40BFAB862465D7C200093BED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40BFAB882465D7C200093BED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +77,42 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		40A71639247C712B008F75C0 /* CreateNewAccountViewController */ = {
+			isa = PBXGroup;
+			children = (
+				40A7162D247C711C008F75C0 /* CreateNewAccount.storyboard */,
+				40A7162F247C711C008F75C0 /* CreateNewAccount.swift */,
+			);
+			path = CreateNewAccountViewController;
+			sourceTree = "<group>";
+		};
+		40A7163A247C715E008F75C0 /* LoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+				40A71630247C711C008F75C0 /* loginPage.storyboard */,
+				40A71632247C711C008F75C0 /* loginPage.swift */,
+			);
+			path = LoginViewController;
+			sourceTree = "<group>";
+		};
+		40A7163B247C7178008F75C0 /* SecurityQuestionsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				40A71631247C711C008F75C0 /* SecurityQuestions.storyboard */,
+				40A7162E247C711C008F75C0 /* SecurityQuestions.swift */,
+			);
+			path = SecurityQuestionsViewController;
+			sourceTree = "<group>";
+		};
+		40A7163C247C71A2008F75C0 /* RegisteredAccountsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0728FE9524712995009305D3 /* RegisteredAccountsView.storyboard */,
+				0728FE972471349B009305D3 /* RegisteredAccounts.swift */,
+			);
+			path = RegisteredAccountsViewController;
+			sourceTree = "<group>";
+		};
 		40BFAB7A2465D7C200093BED = {
 			isa = PBXGroup;
 			children = (
@@ -87,30 +134,20 @@
 		40BFAB852465D7C200093BED /* PasswordManager */ = {
 			isa = PBXGroup;
 			children = (
-				97F02A9D247B3D98005C3DC3 /* Podfile */,
-				979CCB64247B3D5C0023F2AB /* GoogleService-Info.plist */,
+				40A7163A247C715E008F75C0 /* LoginViewController */,
+				40A7163B247C7178008F75C0 /* SecurityQuestionsViewController */,
+				40A71639247C712B008F75C0 /* CreateNewAccountViewController */,
+				40A7163C247C71A2008F75C0 /* RegisteredAccountsViewController */,
 				40BFAB862465D7C200093BED /* AppDelegate.swift */,
 				40BFAB882465D7C200093BED /* SceneDelegate.swift */,
 				40BFAB8A2465D7C200093BED /* ViewController.swift */,
 				0728FE992478659D009305D3 /* GoogleService-Info.plist */,
 				40BFAB8C2465D7C200093BED /* Main.storyboard */,
-				0728FE9524712995009305D3 /* RegisteredAccountsView.storyboard */,
-				0728FE972471349B009305D3 /* RegisteredAccounts.swift */,
 				40BFAB8F2465D7C400093BED /* Assets.xcassets */,
 				40BFAB912465D7C400093BED /* LaunchScreen.storyboard */,
 				40BFAB942465D7C400093BED /* Info.plist */,
-				979A7EC7246B4D9200C1A12C /* CreateNewAccount.storyboard */,
-				979A7EC6246B4D9200C1A12C /* CreateNewAccount.swift */,
 			);
 			path = PasswordManager;
-			sourceTree = "<group>";
-		};
-		6B48424FB8F94C84AD34E05A /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				08D471276505C6D42E3B7F78 /* Pods_PasswordManager.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,13 +210,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97F02A9E247B3D98005C3DC3 /* Podfile in Resources */,
 				40BFAB932465D7C400093BED /* LaunchScreen.storyboard in Resources */,
-				979A7EC9246B4D9200C1A12C /* CreateNewAccount.storyboard in Resources */,
-				979CCB65247B3D5C0023F2AB /* GoogleService-Info.plist in Resources */,
+				40A71633247C711C008F75C0 /* CreateNewAccount.storyboard in Resources */,
 				40BFAB902465D7C400093BED /* Assets.xcassets in Resources */,
+				40A71636247C711C008F75C0 /* loginPage.storyboard in Resources */,
 				0728FE9A2478659E009305D3 /* GoogleService-Info.plist in Resources */,
 				40BFAB8E2465D7C200093BED /* Main.storyboard in Resources */,
+				40A71637247C711C008F75C0 /* SecurityQuestions.storyboard in Resources */,
 				0728FE9624712995009305D3 /* RegisteredAccountsView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -233,10 +270,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				979A7EC8246B4D9200C1A12C /* CreateNewAccount.swift in Sources */,
+				40A71635247C711C008F75C0 /* CreateNewAccount.swift in Sources */,
 				40BFAB8B2465D7C200093BED /* ViewController.swift in Sources */,
 				0728FE982471349B009305D3 /* RegisteredAccounts.swift in Sources */,
+				40A71634247C711C008F75C0 /* SecurityQuestions.swift in Sources */,
 				40BFAB872465D7C200093BED /* AppDelegate.swift in Sources */,
+				40A71638247C711C008F75C0 /* loginPage.swift in Sources */,
 				40BFAB892465D7C200093BED /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
