@@ -11,8 +11,6 @@
 // TODO: Center constrain the "Sign Up" and "Security Questions" headers.
 // TODO: Update error checking to be while the user is typing, and not after.
 // (There is a bug in which the user can "trick" the app into thinking that all fields had been entered properly.)
-// TODO: Make text field border colors be the same shade of light gray.
-// TODO: Generated question/answer text fields should not have a fixed width.
 // TODO: Space the question/answer text fields better so that they look nicer.
 
 // The following are higher priority tasks:
@@ -113,12 +111,12 @@ class CreateNewAccount: UIViewController, UITableViewDelegate {
     questionLabel.text = "Question " + String(questionCounter)
     scrollView.addSubview(questionLabel)
 
-    let questionTextField = UITextField(frame: CGRect(x: 0, y: 0, width: 375, height: 34))
+    let questionTextField = UITextField(frame: CGRect(x: 0, y: 0, width: questionOneTextField.frame.size.width, height: questionOneTextField.frame.size.height))
     questionTextField.center = CGPoint(x: prevQuestionLabelPosX + 90, y: prevQuestionLabelPosY + 35)
     questionTextField.layer.cornerRadius = 5.0
     questionTextField.layer.borderWidth = 2.0
     questionTextField.layer.borderWidth = 1.0
-    questionTextField.layer.borderColor = UIColor.lightGray.cgColor
+    questionTextField.layer.borderColor = UIColor(white: 0.0, alpha: 0.21).cgColor
     questionTextField.placeholder = "Enter your question here"
     let paddingQuestionView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: questionTextField.frame.height))
     questionTextField.leftView = paddingQuestionView
@@ -134,12 +132,12 @@ class CreateNewAccount: UIViewController, UITableViewDelegate {
     answerLabel.text = "Answer"
     scrollView.addSubview(answerLabel)
 
-    let answerTextField = UITextField(frame: CGRect(x: 0, y: 0, width: 375, height: 34))
+    let answerTextField = UITextField(frame: CGRect(x: 0, y: 0, width: answerOneTextField.frame.size.width, height: answerOneTextField.frame.size.height))
     answerTextField.center = CGPoint(x: prevQuestionLabelPosX + 90, y: prevQuestionLabelPosY + 110)
     answerTextField.layer.cornerRadius = 5.0
     answerTextField.layer.borderWidth = 2.0
     answerTextField.layer.borderWidth = 1.0
-    answerTextField.layer.borderColor = UIColor.lightGray.cgColor
+    answerTextField.layer.borderColor = UIColor(white: 0.0, alpha: 0.21).cgColor
     answerTextField.placeholder = "Enter your answer here"
     let paddingAnswerView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: questionTextField.frame.height))
     answerTextField.leftView = paddingAnswerView
@@ -215,13 +213,6 @@ class CreateNewAccount: UIViewController, UITableViewDelegate {
 
         let db = Firestore.firestore()
         let userID = result!.user.uid
-//        var userRef: DocumentReference!
-//        var appAccountModelName: String
-
-        // Reference to document ID for AppAccountModel ?
-//        let refString = db.collection("MasterAccountModel").document(userID)
-//        appAccountModelName = "AppAccountModel" + userID
-//        userRef = db.document("\(appAccountModelName)/\(refString)")
 
         // Create a new document about this new user and add it to the database.
         db.collection("MasterAccountModel").document(userID).setData([
