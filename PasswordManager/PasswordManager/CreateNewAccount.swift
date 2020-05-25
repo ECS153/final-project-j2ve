@@ -213,20 +213,17 @@ class CreateNewAccount: UIViewController, UITableViewDelegate {
 
         let db = Firestore.firestore()
         let userID = result!.user.uid
+        var questionNumber = "Q"
 
         // Create a new document about this new user and add it to the database.
         db.collection("MasterAccountModel").document(userID).setData([
           "Email": email,
           "MasterPassword": pass,
           "QandAs": [
-              "Q1": [
-                  "Question": "i need a loop here",
-                  "Answer": "i need a loop here"
-              ],
-              "Q2": [
-                  "Question": "i need a loop here",
-                  "Answer": "i need a loop here"
-              ]
+            "Q1": [
+              "Question": self.questionOneTextField.text,
+              "Answer": self.answerOneTextField.text
+            ]
           ],
           "RegAccounts": []
         ]) { err in
@@ -235,6 +232,28 @@ class CreateNewAccount: UIViewController, UITableViewDelegate {
           } else {
             print("Document successfully written!")
           }
+        }
+
+        // Merge the remaining QandAs to the newly created document
+        for i in 0...self.questionTextFields.count-1 {
+          questionNumber.append(String(i+2))
+
+          db.collection("MasterAccountModel").document(userID).setData([
+            "QandAs": [
+                questionNumber: [
+                  "Question": self.questionTextFields[i].text,
+                  "Answer": self.answerTextFields[i].text
+                ]
+            ]
+          ], merge: true) { err in
+            if let err = err {
+              print("Error writing document: \(err)")
+            } else {
+              print("Document successfully written!")
+            }
+          }
+
+          questionNumber = String(questionNumber.dropLast())
         }
       }
       else {
