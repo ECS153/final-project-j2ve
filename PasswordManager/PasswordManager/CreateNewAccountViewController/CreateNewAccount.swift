@@ -212,7 +212,15 @@ class CreateNewAccount: UIViewController, UITableViewDelegate, UITextFieldDelega
         print("Success! You can create a new account.")
 
         handleSignUp()
-        // TODO: Segue to Accounts Screen
+        // Segue to Accounts Screen
+        
+        // casting view controller as registered accounts view controller
+        let registeredAccountController = UIStoryboard(name: "RegisteredAccountsView", bundle: nil).instantiateViewController(withIdentifier: "RegisteredAccountsViewController") as! RegisteredAccountsViewController
+        
+        // get navigation controller so can create a new flow of the app (login flow has finished)
+        let navigationController = UINavigationController(rootViewController: registeredAccountController)
+        navigationController.modalPresentationStyle = .fullScreen
+        self.present(navigationController, animated: true)
       }
     }
   }
