@@ -246,8 +246,7 @@ class CreateNewAccount: UIViewController, UITableViewDelegate, UITextFieldDelega
               "Question": self.questionOneTextField.text,
               "Answer": self.answerOneTextField.text
             ]
-          ],
-          "RegAccounts": []
+          ]
         ]) { err in
           if let err = err {
             print("Error writing document: \(err)")
