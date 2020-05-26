@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0728FE9624712995009305D3 /* RegisteredAccountsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0728FE9524712995009305D3 /* RegisteredAccountsViewController.storyboard */; };
-		0728FE982471349B009305D3 /* RegisteredAccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0728FE972471349B009305D3 /* RegisteredAccountsViewController.swift */; };
+		0728FE9624712995009305D3 /* RegisteredAccountsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0728FE9524712995009305D3 /* RegisteredAccountsView.storyboard */; };
+		0728FE982471349B009305D3 /* RegisteredAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0728FE972471349B009305D3 /* RegisteredAccounts.swift */; };
 		0728FE9A2478659E009305D3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0728FE992478659D009305D3 /* GoogleService-Info.plist */; };
 		40A71633247C711C008F75C0 /* CreateNewAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40A7162D247C711C008F75C0 /* CreateNewAccount.storyboard */; };
-		40A71634247C711C008F75C0 /* SecurityQuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A7162E247C711C008F75C0 /* SecurityQuestionsViewController.swift */; };
+		40A71634247C711C008F75C0 /* SecurityQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A7162E247C711C008F75C0 /* SecurityQuestions.swift */; };
 		40A71635247C711C008F75C0 /* CreateNewAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A7162F247C711C008F75C0 /* CreateNewAccount.swift */; };
-		40A71637247C711C008F75C0 /* SecurityQuestionsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40A71631247C711C008F75C0 /* SecurityQuestionsViewController.storyboard */; };
+		40A71637247C711C008F75C0 /* SecurityQuestions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40A71631247C711C008F75C0 /* SecurityQuestions.storyboard */; };
 		40A71638247C711C008F75C0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A71632247C711C008F75C0 /* LoginViewController.swift */; };
 		40BFAB872465D7C200093BED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BFAB862465D7C200093BED /* AppDelegate.swift */; };
 		40BFAB892465D7C200093BED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BFAB882465D7C200093BED /* SceneDelegate.swift */; };
@@ -24,14 +24,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0728FE9524712995009305D3 /* RegisteredAccountsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisteredAccountsViewController.storyboard; sourceTree = "<group>"; };
-		0728FE972471349B009305D3 /* RegisteredAccountsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisteredAccountsViewController.swift; sourceTree = "<group>"; };
+		0728FE9524712995009305D3 /* RegisteredAccountsView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisteredAccountsView.storyboard; sourceTree = "<group>"; };
+		0728FE972471349B009305D3 /* RegisteredAccounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisteredAccounts.swift; sourceTree = "<group>"; };
 		0728FE992478659D009305D3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		25B62593183B43C73DD85AD0 /* Pods-PasswordManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PasswordManager.debug.xcconfig"; path = "Target Support Files/Pods-PasswordManager/Pods-PasswordManager.debug.xcconfig"; sourceTree = "<group>"; };
 		40A7162D247C711C008F75C0 /* CreateNewAccount.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateNewAccount.storyboard; sourceTree = "<group>"; };
-		40A7162E247C711C008F75C0 /* SecurityQuestionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecurityQuestionsViewController.swift; sourceTree = "<group>"; };
+		40A7162E247C711C008F75C0 /* SecurityQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecurityQuestions.swift; sourceTree = "<group>"; };
 		40A7162F247C711C008F75C0 /* CreateNewAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewAccount.swift; sourceTree = "<group>"; };
-		40A71631247C711C008F75C0 /* SecurityQuestionsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SecurityQuestionsViewController.storyboard; sourceTree = "<group>"; };
+		40A71631247C711C008F75C0 /* SecurityQuestions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SecurityQuestions.storyboard; sourceTree = "<group>"; };
 		40A71632247C711C008F75C0 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		40BFAB832465D7C200093BED /* PasswordManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasswordManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40BFAB862465D7C200093BED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -94,8 +94,8 @@
 		40A7163B247C7178008F75C0 /* SecurityQuestionsViewController */ = {
 			isa = PBXGroup;
 			children = (
-				40A71631247C711C008F75C0 /* SecurityQuestionsViewController.storyboard */,
-				40A7162E247C711C008F75C0 /* SecurityQuestionsViewController.swift */,
+				40A71631247C711C008F75C0 /* SecurityQuestions.storyboard */,
+				40A7162E247C711C008F75C0 /* SecurityQuestions.swift */,
 			);
 			path = SecurityQuestionsViewController;
 			sourceTree = "<group>";
@@ -103,8 +103,8 @@
 		40A7163C247C71A2008F75C0 /* RegisteredAccountsViewController */ = {
 			isa = PBXGroup;
 			children = (
-				0728FE9524712995009305D3 /* RegisteredAccountsViewController.storyboard */,
-				0728FE972471349B009305D3 /* RegisteredAccountsViewController.swift */,
+				0728FE9524712995009305D3 /* RegisteredAccountsView.storyboard */,
+				0728FE972471349B009305D3 /* RegisteredAccounts.swift */,
 			);
 			path = RegisteredAccountsViewController;
 			sourceTree = "<group>";
@@ -130,12 +130,12 @@
 		40BFAB852465D7C200093BED /* PasswordManager */ = {
 			isa = PBXGroup;
 			children = (
-				40BFAB862465D7C200093BED /* AppDelegate.swift */,
-				40BFAB882465D7C200093BED /* SceneDelegate.swift */,
 				40A7163A247C715E008F75C0 /* LoginViewController */,
 				40A7163B247C7178008F75C0 /* SecurityQuestionsViewController */,
 				40A71639247C712B008F75C0 /* CreateNewAccountViewController */,
 				40A7163C247C71A2008F75C0 /* RegisteredAccountsViewController */,
+				40BFAB862465D7C200093BED /* AppDelegate.swift */,
+				40BFAB882465D7C200093BED /* SceneDelegate.swift */,
 				0728FE992478659D009305D3 /* GoogleService-Info.plist */,
 				40BFAB8F2465D7C400093BED /* Assets.xcassets */,
 				40BFAB912465D7C400093BED /* LaunchScreen.storyboard */,
@@ -209,8 +209,8 @@
 				40BFAB902465D7C400093BED /* Assets.xcassets in Resources */,
 				0728FE9A2478659E009305D3 /* GoogleService-Info.plist in Resources */,
 				40BFAB8E2465D7C200093BED /* Main.storyboard in Resources */,
-				40A71637247C711C008F75C0 /* SecurityQuestionsViewController.storyboard in Resources */,
-				0728FE9624712995009305D3 /* RegisteredAccountsViewController.storyboard in Resources */,
+				40A71637247C711C008F75C0 /* SecurityQuestions.storyboard in Resources */,
+				0728FE9624712995009305D3 /* RegisteredAccountsView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,8 +264,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				40A71635247C711C008F75C0 /* CreateNewAccount.swift in Sources */,
-				0728FE982471349B009305D3 /* RegisteredAccountsViewController.swift in Sources */,
-				40A71634247C711C008F75C0 /* SecurityQuestionsViewController.swift in Sources */,
+				0728FE982471349B009305D3 /* RegisteredAccounts.swift in Sources */,
+				40A71634247C711C008F75C0 /* SecurityQuestions.swift in Sources */,
 				40BFAB872465D7C200093BED /* AppDelegate.swift in Sources */,
 				40A71638247C711C008F75C0 /* LoginViewController.swift in Sources */,
 				40BFAB892465D7C200093BED /* SceneDelegate.swift in Sources */,
