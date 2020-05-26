@@ -53,9 +53,6 @@
                                 <state key="normal" backgroundImage="plus.square.fill" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="large"/>
                                 </state>
-                                <connections>
-                                    <action selector="addAccountButtonPress:" destination="RcO-9r-Blf" eventType="touchUpInside" id="1MO-ym-Lql"/>
-                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="J6K-Aq-YYx">
                                 <rect key="frame" x="20" y="157.5" width="374" height="626.5"/>
@@ -100,9 +97,6 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="bold"/>
                                 </state>
-                                <connections>
-                                    <action selector="logoutButtonPress:" destination="RcO-9r-Blf" eventType="touchUpInside" id="XLH-yu-pEw"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -124,10 +118,6 @@
                         <viewLayoutGuide key="safeArea" id="j1l-Op-EPX"/>
                     </view>
                     <navigationItem key="navigationItem" id="jTF-rC-423"/>
-                    <connections>
-                        <outlet property="addAccountButton" destination="tac-pA-ssi" id="qb7-Zr-hTx"/>
-                        <outlet property="logoutButton" destination="1Pr-Oa-WJo" id="5di-dE-7fv"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cxc-A2-Bqv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
