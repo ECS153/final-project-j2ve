@@ -81,6 +81,9 @@
                                 <state key="normal" title="Submit">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="submitButtonPress:" destination="JJ3-A6-sbK" eventType="touchUpInside" id="Uj1-oc-jK2"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -97,6 +100,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DQH-Uk-XTc"/>
                     </view>
+                    <connections>
+                        <outlet property="submitButton" destination="bgJ-Rd-1IT" id="xd6-Sv-WWz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nyb-yH-fTv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

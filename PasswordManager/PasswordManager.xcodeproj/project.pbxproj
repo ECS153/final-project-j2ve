@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0728FE9624712995009305D3 /* RegisteredAccountsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0728FE9524712995009305D3 /* RegisteredAccountsViewController.storyboard */; };
+		0728FE9624712995009305D3 /* RegisteredAccountsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0728FE9524712995009305D3 /* RegisteredAccountsView.storyboard */; };
 		0728FE982471349B009305D3 /* RegisteredAccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0728FE972471349B009305D3 /* RegisteredAccountsViewController.swift */; };
 		0728FE9A2478659E009305D3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0728FE992478659D009305D3 /* GoogleService-Info.plist */; };
 		40A71633247C711C008F75C0 /* CreateNewAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40A7162D247C711C008F75C0 /* CreateNewAccount.storyboard */; };
@@ -24,7 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0728FE9524712995009305D3 /* RegisteredAccountsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisteredAccountsViewController.storyboard; sourceTree = "<group>"; };
+		0728FE9524712995009305D3 /* RegisteredAccountsView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisteredAccountsView.storyboard; sourceTree = "<group>"; };
 		0728FE972471349B009305D3 /* RegisteredAccountsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisteredAccountsViewController.swift; sourceTree = "<group>"; };
 		0728FE992478659D009305D3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		25B62593183B43C73DD85AD0 /* Pods-PasswordManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PasswordManager.debug.xcconfig"; path = "Target Support Files/Pods-PasswordManager/Pods-PasswordManager.debug.xcconfig"; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 		40A7163C247C71A2008F75C0 /* RegisteredAccountsViewController */ = {
 			isa = PBXGroup;
 			children = (
-				0728FE9524712995009305D3 /* RegisteredAccountsViewController.storyboard */,
+				0728FE9524712995009305D3 /* RegisteredAccountsView.storyboard */,
 				0728FE972471349B009305D3 /* RegisteredAccountsViewController.swift */,
 			);
 			path = RegisteredAccountsViewController;
@@ -210,7 +210,7 @@
 				0728FE9A2478659E009305D3 /* GoogleService-Info.plist in Resources */,
 				40BFAB8E2465D7C200093BED /* Main.storyboard in Resources */,
 				40A71637247C711C008F75C0 /* SecurityQuestionsViewController.storyboard in Resources */,
-				0728FE9624712995009305D3 /* RegisteredAccountsViewController.storyboard in Resources */,
+				0728FE9624712995009305D3 /* RegisteredAccountsView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="tIa-OP-5hh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="axZ-1i-l8e" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4oo-ul-S0Y">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="RcO-9r-Blf" kind="relationship" relationship="rootViewController" id="1nC-Cf-ckD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qDi-85-0Mi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1107" y="-54"/>
+        </scene>
         <!--Registered Accounts View Controller-->
         <scene sceneID="mZq-Ka-ZD9">
             <objects>
@@ -16,7 +32,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registered Accounts" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDC-2g-pnL">
-                                <rect key="frame" x="20" y="64" width="292" height="39.5"/>
+                                <rect key="frame" x="20" y="108" width="292" height="39.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="PDC-2g-pnL" secondAttribute="height" multiplier="258:35" id="UDp-dC-XXY"/>
                                     <constraint firstAttribute="width" secondItem="PDC-2g-pnL" secondAttribute="height" multiplier="258:35" id="tcj-Nd-85t"/>
@@ -26,7 +42,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tac-pA-ssi">
-                                <rect key="frame" x="354.5" y="65" width="39.5" height="37"/>
+                                <rect key="frame" x="354.5" y="109" width="39.5" height="37"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES" image="YES"/>
                                 </accessibility>
@@ -39,7 +55,7 @@
                                 </state>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="J6K-Aq-YYx">
-                                <rect key="frame" x="20" y="113.5" width="374" height="670.5"/>
+                                <rect key="frame" x="20" y="157.5" width="374" height="626.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="G3z-Sp-P2d">
@@ -101,6 +117,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="j1l-Op-EPX"/>
                     </view>
+                    <navigationItem key="navigationItem" id="jTF-rC-423"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cxc-A2-Bqv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
