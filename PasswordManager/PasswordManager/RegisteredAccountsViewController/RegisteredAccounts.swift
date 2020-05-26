@@ -6,5 +6,13 @@
 //  Copyright © 2020 Vivienne Zing. All rights reserved.
 //
 
+import UIKit
 import Foundation
 
+class RegisteredAccountsViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+}
