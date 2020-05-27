@@ -28,7 +28,7 @@ Link: https://docs.google.com/document/d/1andZqbJxDLnaEyo30_nPnlPowcGNLLyl3ZrqxB
 
 ## Screen for Displaying Registered Accounts
 
-(one sentence description)
+This design document explains the purpose and functionality of the "Registered Accounts" screen, mainly focusing on how the data is managed and populated from the Firebase Database.
 
 Link: https://docs.google.com/document/d/1WeuTxkCZ2jkdzq3fufodjClpdUlS6GFxnT2tz8mT6zY/
 
