@@ -24,10 +24,6 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m3i-wP-JVd">
-                                        <rect key="frame" x="20" y="15" width="34" height="30"/>
-                                        <state key="normal" title="Back"/>
-                                    </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter email address" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="heS-if-cxN">
                                         <rect key="frame" x="20" y="84" width="374" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -148,7 +144,6 @@
                                     <constraint firstItem="4DJ-Cb-RfE" firstAttribute="trailing" secondItem="z5r-J1-qOO" secondAttribute="trailing" constant="20" id="84d-ze-eMc"/>
                                     <constraint firstItem="4DJ-Cb-RfE" firstAttribute="trailing" secondItem="eAD-DY-R66" secondAttribute="trailing" constant="20" id="8LJ-m5-FIu"/>
                                     <constraint firstItem="xj8-Kl-bPg" firstAttribute="leading" secondItem="4DJ-Cb-RfE" secondAttribute="leading" constant="20" id="8XI-Ie-F9M"/>
-                                    <constraint firstItem="m3i-wP-JVd" firstAttribute="leading" secondItem="xKp-2I-ced" secondAttribute="leading" constant="20" id="8aF-BZ-Htf"/>
                                     <constraint firstItem="4DJ-Cb-RfE" firstAttribute="trailing" secondItem="LLO-ke-ItU" secondAttribute="trailing" constant="20" id="9lN-QN-RuX"/>
                                     <constraint firstItem="Znn-Vt-ngg" firstAttribute="top" secondItem="heS-if-cxN" secondAttribute="bottom" constant="10" id="9w6-gt-FU0"/>
                                     <constraint firstItem="Haz-NM-sO8" firstAttribute="top" secondItem="0v1-Ki-NOd" secondAttribute="bottom" constant="10" id="AMd-bN-ZCJ"/>
@@ -157,7 +152,6 @@
                                     <constraint firstItem="LLO-ke-ItU" firstAttribute="top" secondItem="Haz-NM-sO8" secondAttribute="bottom" constant="5" id="C98-vh-EJu"/>
                                     <constraint firstItem="eAD-DY-R66" firstAttribute="leading" secondItem="4DJ-Cb-RfE" secondAttribute="leading" constant="20" id="DED-xa-m16"/>
                                     <constraint firstItem="eAD-DY-R66" firstAttribute="top" secondItem="TzA-Qq-gVe" secondAttribute="bottom" constant="5" id="Dun-Ag-rAW"/>
-                                    <constraint firstItem="m3i-wP-JVd" firstAttribute="top" secondItem="xKp-2I-ced" secondAttribute="top" constant="15" id="EhT-th-vIy"/>
                                     <constraint firstItem="4DJ-Cb-RfE" firstAttribute="trailing" secondItem="heS-if-cxN" secondAttribute="trailing" constant="20" id="FU5-p3-kt7"/>
                                     <constraint firstItem="wqp-w1-l4R" firstAttribute="leading" secondItem="4DJ-Cb-RfE" secondAttribute="leading" constant="27" id="HTl-kQ-l1J"/>
                                     <constraint firstItem="TzA-Qq-gVe" firstAttribute="leading" secondItem="4DJ-Cb-RfE" secondAttribute="leading" constant="20" id="Hjl-Qh-reY"/>
