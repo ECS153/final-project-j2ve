@@ -23,7 +23,7 @@ Meeting Doc <br>
 https://docs.google.com/document/d/101I8RYWqgByZ7j9eQ1qD9QHtv0gdeFeOVfifyD2lbYk/
 
 Video Link <br>
-[need link here]
+https://drive.google.com/file/d/1CnDVVM1rX7eWZ174ZIS_aP40LlB1Bckw/view?usp=sharing
 
 Design Docs can all be found here <br>
 https://github.com/ECS153/final-project-j2ve/blob/master/design_docs.md
