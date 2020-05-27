@@ -101,7 +101,13 @@
                         <viewLayoutGuide key="safeArea" id="DQH-Uk-XTc"/>
                     </view>
                     <connections>
+                        <outlet property="firstSecurityQuestion" destination="dKC-02-hab" id="KRi-VR-Sv3"/>
+                        <outlet property="firstSecurityQuestionAnswer" destination="dAv-Fr-W7h" id="pMt-lr-MyR"/>
+                        <outlet property="secondSecurityQuestion" destination="g77-3p-fPY" id="nKZ-Le-O7j"/>
+                        <outlet property="secondSecurityQuestionAnswer" destination="ghI-wo-d11" id="yjz-09-N5P"/>
                         <outlet property="submitButton" destination="bgJ-Rd-1IT" id="X5j-9q-Agw"/>
+                        <outlet property="thirdSecurityQuestion" destination="P5T-Kg-6V5" id="yrv-4J-dv5"/>
+                        <outlet property="thirdSecurityQuestionAnswer" destination="krW-Ni-0ia" id="Wn2-hI-P9h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nyb-yH-fTv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
