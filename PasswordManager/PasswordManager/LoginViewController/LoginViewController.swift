@@ -62,12 +62,13 @@ class LoginViewController: UIViewController {
             // If there is an error with signing user in, show error message
             if (error != nil) {
                 let errCode = AuthErrorCode(rawValue: error!._code)
-                // TODO: There is probably a more elegant way to do this
-                if (errCode?.rawValue == 17008) {
-                    self.showErrorMessage("Please enter correctly formatted email")
-                }
-                else if (errCode?.rawValue == 17011 || errCode?.rawValue == 17009) {
-                    self.showErrorMessage("Your account does not exist or password is invalid") // registered?
+                switch errCode {
+                    case .invalidEmail:
+                        self.showErrorMessage("Please enter a valid email")
+                    case .wrongPassword, .userNotFound:
+                        self.showErrorMessage("Your account does not exist or password is invalid")
+                    default:
+                        debugPrint("Other error")
                 }
                 return
             }
@@ -85,7 +86,6 @@ class LoginViewController: UIViewController {
             }
         }
     }
-    
     
     @IBAction func createAccountButtonPress(_ sender: Any) {
         // navigate to create new account screen
