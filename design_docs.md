@@ -2,9 +2,9 @@
 
 <br>
 
-## Screen for Login
+## Screens for Login and Security Questions
 
-(one sentence description)
+This design document describes the purpose of login and security questions screens and how they relate to each other. It also describes the high-level overview of how the data is retrieved from database.
 
 Link: https://docs.google.com/document/d/1Hexn5qOlJ3s2vOgF0Tk81iv7Dj9Wqb4QiWNaFoG2bGA/
 
