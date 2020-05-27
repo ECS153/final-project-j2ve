@@ -20,7 +20,7 @@ Link: https://docs.google.com/document/d/10mKpiqcam95FZzSiBO-AnoDZxPP9gHr8cf-kGv
 
 ## Screen for Adding Accounts
 
-(one sentence description)
+This design document describes the overall purpose / functionality and layout of the "Add Account" screen, especially in relation to the "Registered Accounts" screen. 
 
 Link: https://docs.google.com/document/d/1andZqbJxDLnaEyo30_nPnlPowcGNLLyl3ZrqxBdfD-c/
 
