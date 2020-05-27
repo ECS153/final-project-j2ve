@@ -24,7 +24,6 @@ class LoginViewController: UIViewController {
         
         // hide error message label upon loading
         errorMessage.alpha = 0
-        print("View did load")
     }
     
     func showErrorMessage(_ message: String!) {
