@@ -74,6 +74,9 @@ class LoginViewController: UIViewController {
             }
             // User successfully signed in, segue to the security questions screen
             else {
+                // set global variable userUID
+                userUID = result!.user.uid
+                
                 let storyboard = UIStoryboard(name: "SecurityQuestions", bundle: nil)
                 
                 // casting view controller as a registered accounts view controller
