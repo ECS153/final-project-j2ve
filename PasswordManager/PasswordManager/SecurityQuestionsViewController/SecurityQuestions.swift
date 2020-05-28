@@ -54,9 +54,9 @@ class SecurityQuestionsViewController: UIViewController {
     }
     
     func fetchSecurityQuestions() {
-        let uid = Auth.auth().currentUser?.uid // uid of current user
         let db = Firestore.firestore()
-        let docRef = db.collection("MasterAccountModel").document(uid!)
+        // userUID: global variable in UserInformation.swift that contains the UID
+        let docRef = db.collection("MasterAccountModel").document(userUID)
 
         docRef.getDocument { (document, error) in
             // If there is an error, print error
