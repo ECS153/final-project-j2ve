@@ -10,10 +10,21 @@ import UIKit
 
 class AddRegisteredAccountViewController: UIViewController {
 
+    @IBOutlet weak var emailErrorMessage: UILabel!
+    @IBOutlet weak var passwordErrorMessage: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // Hide the error labels
+        hideErrorMessages()
+    }
+    
+    func hideErrorMessages() {
+        emailErrorMessage.alpha = 0
+        passwordErrorMessage.alpha = 0
     }
     
 
@@ -26,5 +37,12 @@ class AddRegisteredAccountViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func addButtonTapped(_ sender: Any) {
+        // TODO: Sanitize and validate input (no empty fields)
+        
+        // TODO: Send data to Firebase
+                
+        // TODO: Navigate back to the Registered Accounts List Page
+    }
+    
 }
