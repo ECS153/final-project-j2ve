@@ -16,11 +16,11 @@ class MasterAccountModel {
     var regAccounts: [AppAccountModel]
     var numRegAccounts: Int
     
-    init(email: String, masterPassword: String, securityQandAs: [String: String], regAccounts: [AppAccountModel], numRegAccounts: Int) {
+    init(email: String, masterPassword: String, securityQandAs: [String: String], regAccounts: [AppAccountModel]) {
         self.email = email
         self.masterPassword = masterPassword
         self.securityQandAs = securityQandAs
         self.regAccounts = regAccounts
-        self.numRegAccounts = numRegAccounts
+        self.numRegAccounts = 0
     }
 }

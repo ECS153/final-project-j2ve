@@ -10,8 +10,19 @@ import Foundation
 import UIKit
 
 class AppAccountModel {
+    var regAppID: String
+    
     var appName: String
     var email: String?
     var username: String?
     var password: String
+    
+    init(regAppID: String, appName: String, email: String?, username: String?, password: String) {
+        self.regAppID = regAppID
+        
+        self.appName = appName
+        self.email = email ?? ""
+        self.username = username ?? ""
+        self.password = password
+    }
 }

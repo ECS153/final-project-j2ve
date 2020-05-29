@@ -10,32 +10,117 @@ import UIKit
 import Foundation
 import Firebase
 
-class RegisteredAccountsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RegisteredAccountsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    // MARK:  TABLEVIEW DELEGATE & DATASOURCE
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.numRegAccs
+
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        // NOTE: in storyboard, had to add a tableViewCell with the name of "account" so it would populate accordingly from this
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AppAccountCell", for: indexPath)
+
+        // retrieve correct document at that row
+        let currRegAccDoc = self.masterAccRef.collection("AppAccountModel").document(regAccDocIDs[indexPath.row])
+
+        // get contents of document
+        self.masterAccRef.collection("AppAccountModel").getDocuments { (snapshot, error) in
+            if let error = error {
+                print("Error getting documents: \(error)")
+            } else {
+                var appAccCounter = 0
+                
+                var currRegAppID: String = ""
+                var currRegAppName: String = ""
+                var currRegAppEmail: String? = nil
+                var currRegAppUsername: String? = nil
+                var currRegAppPassword: String = ""
+                
+                for document in snapshot!.documents {
+                   appAccCounter += 1
+                    if appAccCounter == indexPath.row {
+                        currRegAppID = document.documentID
+                        currRegAppName = document.get("appName") as! String
+                        currRegAppEmail = document.get("email") as? String
+                        currRegAppUsername = document.get("username") as? String
+                        currRegAppPassword = document.get("password") as! String
+                        print(currRegAppID, currRegAppName, currRegAppEmail, currRegAppUsername, currRegAppPassword)
+                    }
+                }
+                cell.textLabel?.text = "App Name: \(currRegAppName)"
+                if let email = currRegAppEmail {
+                    cell.detailTextLabel?.text = "email: \(email)"
+                } else {
+                    // value of currRegAppEmail is not set (or nil)
+                    if let username = currRegAppUsername {
+                        cell.detailTextLabel?.text = "username: \(username)"
+                    } else {
+                        // ERROR: one or the other should have been filled out.
+                    }
+                }
+            }
+        }
+        return cell
+    }
+
+    
+    /*
+    // didSelectRowAt --> implement so when tableView cell is clicked, it will do the following: in this case, it goes to the screen AccountDetail
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // performSegue(withIdentifier: "showAccountDetail", sender: indexPath)
+         // UNIVERSAL LINK HERE
+    }
+    
+         // SENDING DATA TO AUTOFILL FIELDS?
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showAccountDetail" {
+            if let index = (sender as? IndexPath)?.row {
+                let controller = segue.destination as! AccountDetailController
+                controller.wallet = userWallet
+                controller.accountIndex = index
+            }
+        }
+
+        if segue.identifier == "showAddAccountController" {
+            let controller = segue.destination as! AddAccountController
+            controller.wallet = userWallet
+        }
+    }
+    */
+    // END OF TABLEVIEW FUNCTIONS
     
     @IBOutlet weak var addAccountButton: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
     
-    @IBOutlet weak var regAccsTableview: UITableView!
+    // UITableView instantiation
+    @IBOutlet weak var regAccsTableView: UITableView!
     
     let db = Firestore.firestore()
+    var userID = ""
     
-    var masterAccRef: CollectionReference!
-    var regAccsRef: CollectionReference!
-    var docRef: DocumentReference!
+    // used to populate tableview of registered accounts
+    var masterAccRef: DocumentReference
+    var numRegAccs: Int
+    var regAccDocIDs: [String] = []
     
     
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    init() {
+        self.numRegAccs = 0
+        masterAccRef = db.collection("MasterAccountModel").document(userID)
         
-        masterAccRef = db.collection("MasterAccountModel")
-        regAccsRef = db.collection("MasterAccountModel/")
-        docRef = db.document("MasterAccountModel/69tCAKxPE9hcn0qz46YZKksKFin2")
-        
-        regAccsTableview.dataSource = self
-        regAccsTableview.delegate = self
+        super.init(nibName: nil, bundle: nil)
     }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     
     @IBAction func addAccountButtonPress(_ sender: Any) {
         // segue over to add account screen
@@ -54,48 +139,63 @@ class RegisteredAccountsViewController: UIViewController, UITableViewDelegate, U
         self.present(navigationController, animated: true)
     }
     
-    // MARK:  TABLEVIEW DELEGATE & DATASOURCE
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.numAccounts;
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // NOTE: in storyboard, had to add a tableViewCell with the name of "account" so it would populate accordingly from this
-        let cell = tableView.dequeueReusableCell(withIdentifier: "account", for: indexPath)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        if let wallet = userWallet {
-            let balanceString = String(format:"balance: $%.2f", wallet.accounts[indexPath.row].amount)
-            // let cellString = String(" \(wallet.accounts[indexPath.row].name) \(balanceString)")
-            let cellString = String(" \(wallet.accounts[indexPath.row].name)")
-            cell.textLabel?.text = cellString
-            cell.detailTextLabel?.text = balanceString
-        }
-        return cell
+        retrieveRegAccIDs()
+        
+        regAccsTableView.dataSource = self
+        regAccsTableView.delegate = self
     }
     /*
-    // didSelectRowAt --> implement so when tableView cell is clicked, it will do the following: in this case, it goes to the screen AccountDetail
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showAccountDetail", sender: indexPath)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showAccountDetail" {
-            if let index = (sender as? IndexPath)?.row {
-                let controller = segue.destination as! AccountDetailController
-                controller.wallet = userWallet
-                controller.accountIndex = index
+    // https://stackoverflow.com/questions/52111685/how-retrieve-values-from-an-object-on-cloud-firestore-swift
+    func retrieveRegAccs() {
+        self.masterAccRef.collection("AppAccountModel").getDocuments { (snapshot, error) in
+        if let error = error {
+            print("Error getting documents: \(error)")
+        } else {
+            var appAccCounter = 0
+            for document in snapshot!.documents {
+               let regAppID = document.documentID
+               let appName = document.get("appName") as! String
+               let email = document.get("email") as! String
+               let username = document.get("username") as! String
+               let password = document.get("password") as! String
+               print(regAppID, appName, email, username, password)
+                
+               appAccCounter += 1
+            }
+            
+            let masterAccData = [
+                "numRegAccounts": appAccCounter
+            ]
+            
+            // update numRegAccounts in master account instance
+            self.masterAccRef.setData(masterAccData, merge: true) { (error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                }
+                print("Successfully updated numRegAccounts")
+                self.numRegAccs = appAccCounter
             }
         }
-
-        if segue.identifier == "showAddAccountController" {
-            let controller = segue.destination as! AddAccountController
-            controller.wallet = userWallet
         }
     }
- */
+    */
+    
+    // supplies regAccDocIDs from db
+    func retrieveRegAccIDs() {
+        self.masterAccRef.collection("AppAccountModel").getDocuments() { (querySnapshot, error) in
+            if let error = error {
+                print("Error getting documents: \(error)")
+            } else {
+                for document in querySnapshot!.documents {
+                    print("\(document.documentID) => \(document.data())")
+                    self.regAccDocIDs.append("\(document.documentID)")
+                    self.numRegAccs += 1
+                }
+            }
+        }
+    }
     
 }
