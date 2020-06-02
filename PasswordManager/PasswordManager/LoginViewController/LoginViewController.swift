@@ -77,6 +77,9 @@ class LoginViewController: UIViewController {
                 // set global variable userUID
                 userUID = result!.user.uid
                 
+                DatabaseConnector.saveMasterPassword(password: masterPassword!)
+                
+                
                 let storyboard = UIStoryboard(name: "SecurityQuestions", bundle: nil)
                 
                 // casting view controller as a registered accounts view controller

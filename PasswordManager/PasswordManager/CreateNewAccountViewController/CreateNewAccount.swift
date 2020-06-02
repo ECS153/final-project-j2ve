@@ -289,8 +289,7 @@ class CreateNewAccount: UIViewController, UITableViewDelegate, UITextFieldDelega
     
   // for sending userID after creating account to next regAccounts screen
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    var regAccVC = segue.destination as! RegisteredAccountsViewController
-    regAccVC.userID = self.userID
+    
   }
 
 }
