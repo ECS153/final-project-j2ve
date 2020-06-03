@@ -96,11 +96,20 @@ class CreateNewAccount: UIViewController, UITableViewDelegate, UITextFieldDelega
   }
 
   @IBAction func createPassword(_ sender: UITextField) {
+    // Master password should be at least 6 characters long
+    // and contain at least 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character
+    let passwordRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[d$@$!%*?&#])[A-Za-z\\dd$@$!%*?&#]{6,}"
+
     if newPasswordTextField.text!.count < 6 {
       passwordErrorLabel.text = "Password needs to be at least 6 characters."
     }
     else {
-      passwordErrorLabel.text = ""
+      if !NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: newPasswordTextField.text!) {
+        passwordErrorLabel.text = "Password needs at least 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character."
+      }
+      else {
+        passwordErrorLabel.text = ""
+      }
     }
   }
 
