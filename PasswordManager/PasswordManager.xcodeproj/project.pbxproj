@@ -21,6 +21,7 @@
 		40BFAB902465D7C400093BED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40BFAB8F2465D7C400093BED /* Assets.xcassets */; };
 		40BFAB932465D7C400093BED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40BFAB912465D7C400093BED /* LaunchScreen.storyboard */; };
 		5B393524C29624184AF3ABA5 /* Pods_PasswordManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9E5978FD417F3709C685BC7 /* Pods_PasswordManager.framework */; };
+		975BB76E24883C1D0041D6CA /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975BB76D24883C1D0041D6CA /* UserInformation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		40BFAB8F2465D7C400093BED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40BFAB922465D7C400093BED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		40BFAB942465D7C400093BED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		975BB76D24883C1D0041D6CA /* UserInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
 		A1DBBC36F470F68E6488E371 /* Pods-PasswordManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PasswordManager.release.xcconfig"; path = "Target Support Files/Pods-PasswordManager/Pods-PasswordManager.release.xcconfig"; sourceTree = "<group>"; };
 		F9E5978FD417F3709C685BC7 /* Pods_PasswordManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PasswordManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -136,6 +138,7 @@
 				40A7163C247C71A2008F75C0 /* RegisteredAccountsViewController */,
 				40BFAB862465D7C200093BED /* AppDelegate.swift */,
 				40BFAB882465D7C200093BED /* SceneDelegate.swift */,
+				975BB76D24883C1D0041D6CA /* UserInformation.swift */,
 				0728FE992478659D009305D3 /* GoogleService-Info.plist */,
 				40BFAB8F2465D7C400093BED /* Assets.xcassets */,
 				40BFAB912465D7C400093BED /* LaunchScreen.storyboard */,
@@ -264,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40A71635247C711C008F75C0 /* CreateNewAccount.swift in Sources */,
+				975BB76E24883C1D0041D6CA /* UserInformation.swift in Sources */,
 				0728FE982471349B009305D3 /* RegisteredAccounts.swift in Sources */,
 				40A71634247C711C008F75C0 /* SecurityQuestions.swift in Sources */,
 				40BFAB872465D7C200093BED /* AppDelegate.swift in Sources */,
