@@ -16,4 +16,7 @@ target 'PasswordManager' do
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
 
+  # Pod for encryption and decryption
+  pod 'RNCryptor', '~> 5.0'
+
 end
