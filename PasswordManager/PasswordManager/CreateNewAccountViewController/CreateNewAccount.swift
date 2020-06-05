@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import RNCryptor
 
 class CreateNewAccount: UIViewController, UITableViewDelegate, UITextFieldDelegate {
 
@@ -246,36 +247,29 @@ class CreateNewAccount: UIViewController, UITableViewDelegate, UITextFieldDelega
         let userID = result!.user.uid
         var questionNumber = "Q"
 
-        // Create a new document about this new user and add it to the database.
-        db.collection("MasterAccountModel").document(userID).setData([
-          "Email": email,
-          "MasterPassword": pass,
-          "QandAs": [
-            "Q1": [
-              "Question": self.questionOneTextField.text,
-              "Answer": self.answerOneTextField.text
-            ]
-          ]
-        ]) { err in
-          if let err = err {
-            print("Error writing document: \(err)")
-          } else {
-            print("Document successfully written!")
-          }
-        }
+        do {
+          let keyForEmail = try self.generateEncryptionKey(withPassword: email)
+          let encryptedEmail = try self.encryptMessage(message: email, encryptionKey: keyForEmail)
+          let keyForPass = try self.generateEncryptionKey(withPassword: pass)
+          let encryptedPass = try self.encryptMessage(message: pass, encryptionKey: keyForPass)
 
-        // Merge the remaining QandAs to the newly created document
-        for i in 0...self.questionTextFields.count-1 {
-          questionNumber.append(String(i+2))
+          // This is to see that the encryption is actually being done properly
+          print(try self.decryptMessage(encryptedMessage: encryptedEmail, encryptionKey: keyForEmail))
+          print(try self.decryptMessage(encryptedMessage: encryptedPass, encryptionKey: keyForPass))
 
+          // Create a new document about this new user and add it to the database.
           db.collection("MasterAccountModel").document(userID).setData([
+            "Email": encryptedEmail,
+            "MasterPassword": encryptedPass,
             "QandAs": [
-                questionNumber: [
-                  "Question": self.questionTextFields[i].text,
-                  "Answer": self.answerTextFields[i].text
-                ]
-            ]
-          ], merge: true) { err in
+              "Q1": [
+                "Question": self.questionOneTextField.text,
+                "Answer": self.answerOneTextField.text
+              ]
+            ],
+            "KeyForEmail": keyForEmail,
+            "KeyForPass": keyForPass
+          ]) { err in
             if let err = err {
               print("Error writing document: \(err)")
             } else {
@@ -283,12 +277,54 @@ class CreateNewAccount: UIViewController, UITableViewDelegate, UITextFieldDelega
             }
           }
 
-          questionNumber = String(questionNumber.dropLast())
+          // Merge the remaining QandAs to the newly created document
+          for i in 0...self.questionTextFields.count-1 {
+            questionNumber.append(String(i+2))
+
+            db.collection("MasterAccountModel").document(userID).setData([
+              "QandAs": [
+                  questionNumber: [
+                    "Question": self.questionTextFields[i].text,
+                    "Answer": self.answerTextFields[i].text
+                  ]
+              ]
+            ], merge: true) { err in
+              if let err = err {
+                print("Error writing document: \(err)")
+              } else {
+                print("Document successfully written!")
+              }
+            }
+
+            questionNumber = String(questionNumber.dropLast())
+          }
+        }
+        catch {
+          print(error)
         }
       }
       else {
         print("Error creating user")
       }
     }
+  }
+
+  func generateEncryptionKey(withPassword password:String) throws -> String {
+    let randomData = RNCryptor.randomData(ofLength: 32)
+    let cipherData = RNCryptor.encrypt(data: randomData, withPassword: password)
+    return cipherData.base64EncodedString()
+  }
+
+  func encryptMessage(message: String, encryptionKey: String) throws -> String {
+    let messageData = message.data(using: .utf8)!
+    let cipherData = RNCryptor.encrypt(data: messageData, withPassword: encryptionKey)
+    return cipherData.base64EncodedString()
+  }
+
+  func decryptMessage(encryptedMessage: String, encryptionKey: String) throws -> String {
+    let encryptedData = Data.init(base64Encoded: encryptedMessage)!
+    let decryptedData = try RNCryptor.decrypt(data: encryptedData, withPassword: encryptionKey)
+    let decryptedString = String(data: decryptedData, encoding: .utf8)!
+    return decryptedString
   }
 }
