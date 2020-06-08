@@ -105,6 +105,7 @@ class LoginViewController: UIViewController {
                                 self.navigationController?.pushViewController(viewController, animated: true)
                             } else { // prompt accounts
                                 debugPrint("prompt accounts")
+                                document.reference.updateData(["Timestamp" : Timestamp(date: Date())])
                                 let registeredAccountController = UIStoryboard(name: "RegisteredAccountsView", bundle: nil).instantiateViewController(withIdentifier: "RegisteredAccountsViewController") as! RegisteredAccountsViewController
                                 
                                 let navigationController = UINavigationController(rootViewController: registeredAccountController)
