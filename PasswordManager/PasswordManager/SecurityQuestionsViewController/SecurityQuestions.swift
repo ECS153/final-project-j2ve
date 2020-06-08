@@ -89,6 +89,9 @@ class SecurityQuestionsViewController: UIViewController {
                 let thirdQuestion = self.chooseRandomQuestion(self.securityQuestions, chosenQuestions)
                 chosenQuestions.append(thirdQuestion!)
                 self.thirdSecurityQuestion.text = thirdQuestion
+                
+                // Update current timestamp as new timestamp after security questions are answered
+                document.reference.updateData(["Timestamp" : Timestamp(date: Date())])
                                 
             }
             // If document does not exist, print
