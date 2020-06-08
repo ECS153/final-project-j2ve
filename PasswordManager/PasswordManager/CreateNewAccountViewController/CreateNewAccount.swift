@@ -28,6 +28,9 @@ class CreateNewAccount: UIViewController, UITableViewDelegate, UITextFieldDelega
   // Outlets for everything else
   @IBOutlet weak var createAccountButton: UIButton!
   @IBOutlet weak var securityQuestionsErrorLabel: UILabel!
+    
+  // for passing data to next screen
+  var userID = ""
 
   // Additional security questions start at Question 2
   var questionCounter = 2
@@ -234,11 +237,11 @@ class CreateNewAccount: UIViewController, UITableViewDelegate, UITextFieldDelega
         print ("User created!")
 
         let db = Firestore.firestore()
-        let userID = result!.user.uid
+        self.userID = result!.user.uid
         var questionNumber = "Q"
 
         // Create a new document about this new user and add it to the database.
-        db.collection("MasterAccountModel").document(userID).setData([
+        db.collection("MasterAccountModel").document(self.userID).setData([
           "Email": email,
           "MasterPassword": pass,
           "QandAs": [
@@ -259,7 +262,7 @@ class CreateNewAccount: UIViewController, UITableViewDelegate, UITextFieldDelega
         for i in 0...self.questionTextFields.count-1 {
           questionNumber.append(String(i+2))
 
-          db.collection("MasterAccountModel").document(userID).setData([
+            db.collection("MasterAccountModel").document(self.userID).setData([
             "QandAs": [
                 questionNumber: [
                   "Question": self.questionTextFields[i].text,
@@ -282,4 +285,11 @@ class CreateNewAccount: UIViewController, UITableViewDelegate, UITextFieldDelega
       }
     }
   }
+   
+    
+  // for sending userID after creating account to next regAccounts screen
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+  }
+
 }
