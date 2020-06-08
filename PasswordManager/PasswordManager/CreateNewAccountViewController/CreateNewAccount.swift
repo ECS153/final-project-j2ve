@@ -236,11 +236,14 @@ class CreateNewAccount: UIViewController, UITableViewDelegate, UITextFieldDelega
         let db = Firestore.firestore()
         let userID = result!.user.uid
         var questionNumber = "Q"
+        let currentDate = Date()
+        let timestamp = Timestamp(date: currentDate)
 
         // Create a new document about this new user and add it to the database.
         db.collection("MasterAccountModel").document(userID).setData([
           "Email": email,
           "MasterPassword": pass,
+          "Timestamp": timestamp,
           "QandAs": [
             "Q1": [
               "Question": self.questionOneTextField.text,
