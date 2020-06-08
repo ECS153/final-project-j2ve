@@ -25,6 +25,7 @@ class SecurityQuestionsViewController: UIViewController {
     
     // variable for all extracted security questions from firebase
     var securityQuestions = [String:String]()
+    var questionChooser = [String:String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,15 +43,29 @@ class SecurityQuestionsViewController: UIViewController {
         thirdErrorMessage.alpha = 0
     }
     
-    func chooseRandomQuestion(_ questionsList: [String: String],_ chosenQuestions: [String]) -> String? {
-        while true {
-            let random = questionsList.randomElement()
-            let question = random?.key
-            // If the question has not been chosen yet, use the question
-            if (!chosenQuestions.contains(question!)) {
-                return question
-            }
-        }
+    // infinity loop
+//    func chooseRandomQuestion(_ questionsList: [String: String],_ chosenQuestions: [String]) -> String? {
+//        while true {
+//            let random = questionsList.randomElement()
+//            let question = random?.key
+//            // If the question has not been chosen yet, use the question
+//            if (!chosenQuestions.contains(question!)) {
+//                return question
+//            }
+//        }
+//    }
+    
+    func chooseRandomQuestion() -> String? {
+        guard let q = questionChooser.randomElement() else { return nil }
+        // return q1
+        // remove q1 => [q2, q3]
+        // return q3
+        // remove q3 => [q2]
+        // return q2
+        // remove q2 => []
+        let question = q.key
+        questionChooser[q.key] = nil
+        return question
     }
     
     func fetchSecurityQuestions() {
@@ -73,23 +88,34 @@ class SecurityQuestionsViewController: UIViewController {
                 for i in securityQuestionsData! {
                     let pair = i.value as? [String: String] ?? nil
                     self.securityQuestions[(pair?["Question"])!] = pair?["Answer"]
+                    /*
+                     {
+                        test: test,
+                        Test: A of 3
+                     
+                     }
+                     
+                     */
                 }
+                self.questionChooser = self.securityQuestions
                 
                 // Set first question
-                let firstQuestion = self.chooseRandomQuestion(self.securityQuestions, chosenQuestions)
-                chosenQuestions.append(firstQuestion!)
-                self.firstSecurityQuestion.text = firstQuestion
-
+                if let firstQuestion = self.chooseRandomQuestion() {
+                    chosenQuestions.append(firstQuestion)
+                    self.firstSecurityQuestion.text = firstQuestion
+                }
+                
                 // Set second question
-                let secondQuestion = self.chooseRandomQuestion(self.securityQuestions, chosenQuestions)
-                chosenQuestions.append(secondQuestion!)
-                self.secondSecurityQuestion.text = secondQuestion
-                                
+                if let secondQuestion = self.chooseRandomQuestion() {
+                    chosenQuestions.append(secondQuestion)
+                    self.secondSecurityQuestion.text = secondQuestion
+                }
                 // Set third question
-                let thirdQuestion = self.chooseRandomQuestion(self.securityQuestions, chosenQuestions)
-                chosenQuestions.append(thirdQuestion!)
-                self.thirdSecurityQuestion.text = thirdQuestion
-                                
+                if let thirdQuestion = self.chooseRandomQuestion() {
+                    chosenQuestions.append(thirdQuestion)
+                    self.thirdSecurityQuestion.text = thirdQuestion
+                }
+                
             }
             // If document does not exist, print
             else {
