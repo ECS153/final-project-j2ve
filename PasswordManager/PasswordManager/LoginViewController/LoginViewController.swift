@@ -80,7 +80,9 @@ class LoginViewController: UIViewController {
                 
                 let db = Firestore.firestore()
                 let docRef = db.collection("MasterAccountModel").document(userUID)
+                DatabaseConnector.saveMasterPassword(password: masterPassword!)
                 
+                    
                 docRef.getDocument { (document, error) in
                            // If there is an error, print error
                            if (error != nil) {

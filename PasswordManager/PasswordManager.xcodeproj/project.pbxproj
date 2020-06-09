@@ -10,6 +10,10 @@
 		0728FE9624712995009305D3 /* RegisteredAccountsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0728FE9524712995009305D3 /* RegisteredAccountsView.storyboard */; };
 		0728FE982471349B009305D3 /* RegisteredAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0728FE972471349B009305D3 /* RegisteredAccounts.swift */; };
 		0728FE9A2478659E009305D3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0728FE992478659D009305D3 /* GoogleService-Info.plist */; };
+		07FD9D7524804FEB00EBD0BD /* MasterAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FD9D7424804FEB00EBD0BD /* MasterAccountModel.swift */; };
+		07FD9D772480500D00EBD0BD /* AppAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FD9D762480500D00EBD0BD /* AppAccountModel.swift */; };
+		405938A5248FC997005EEB93 /* AddAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405938A4248FC997005EEB93 /* AddAccountViewController.swift */; };
+		405938A7248FC9C6005EEB93 /* AddAccountViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 405938A6248FC9C6005EEB93 /* AddAccountViewController.storyboard */; };
 		40A71633247C711C008F75C0 /* CreateNewAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40A7162D247C711C008F75C0 /* CreateNewAccount.storyboard */; };
 		40A71634247C711C008F75C0 /* SecurityQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A7162E247C711C008F75C0 /* SecurityQuestions.swift */; };
 		40A71635247C711C008F75C0 /* CreateNewAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A7162F247C711C008F75C0 /* CreateNewAccount.swift */; };
@@ -20,6 +24,7 @@
 		40BFAB8E2465D7C200093BED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40BFAB8C2465D7C200093BED /* Main.storyboard */; };
 		40BFAB902465D7C400093BED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40BFAB8F2465D7C400093BED /* Assets.xcassets */; };
 		40BFAB932465D7C400093BED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40BFAB912465D7C400093BED /* LaunchScreen.storyboard */; };
+		40E6F1F1248FD111003AA536 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E6F1F0248FD111003AA536 /* KeychainWrapper.swift */; };
 		5B393524C29624184AF3ABA5 /* Pods_PasswordManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9E5978FD417F3709C685BC7 /* Pods_PasswordManager.framework */; };
 		975BB76E24883C1D0041D6CA /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975BB76D24883C1D0041D6CA /* UserInformation.swift */; };
 /* End PBXBuildFile section */
@@ -28,7 +33,11 @@
 		0728FE9524712995009305D3 /* RegisteredAccountsView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisteredAccountsView.storyboard; sourceTree = "<group>"; };
 		0728FE972471349B009305D3 /* RegisteredAccounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisteredAccounts.swift; sourceTree = "<group>"; };
 		0728FE992478659D009305D3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		07FD9D7424804FEB00EBD0BD /* MasterAccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterAccountModel.swift; sourceTree = "<group>"; };
+		07FD9D762480500D00EBD0BD /* AppAccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAccountModel.swift; sourceTree = "<group>"; };
 		25B62593183B43C73DD85AD0 /* Pods-PasswordManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PasswordManager.debug.xcconfig"; path = "Target Support Files/Pods-PasswordManager/Pods-PasswordManager.debug.xcconfig"; sourceTree = "<group>"; };
+		405938A4248FC997005EEB93 /* AddAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountViewController.swift; sourceTree = "<group>"; };
+		405938A6248FC9C6005EEB93 /* AddAccountViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddAccountViewController.storyboard; sourceTree = "<group>"; };
 		40A7162D247C711C008F75C0 /* CreateNewAccount.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateNewAccount.storyboard; sourceTree = "<group>"; };
 		40A7162E247C711C008F75C0 /* SecurityQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecurityQuestions.swift; sourceTree = "<group>"; };
 		40A7162F247C711C008F75C0 /* CreateNewAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewAccount.swift; sourceTree = "<group>"; };
@@ -41,6 +50,7 @@
 		40BFAB8F2465D7C400093BED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40BFAB922465D7C400093BED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		40BFAB942465D7C400093BED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40E6F1F0248FD111003AA536 /* KeychainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
 		975BB76D24883C1D0041D6CA /* UserInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
 		A1DBBC36F470F68E6488E371 /* Pods-PasswordManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PasswordManager.release.xcconfig"; path = "Target Support Files/Pods-PasswordManager/Pods-PasswordManager.release.xcconfig"; sourceTree = "<group>"; };
 		F9E5978FD417F3709C685BC7 /* Pods_PasswordManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PasswordManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +68,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07FD9D782480509800EBD0BD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				07FD9D7424804FEB00EBD0BD /* MasterAccountModel.swift */,
+				07FD9D762480500D00EBD0BD /* AppAccountModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		0FFB22A7E7B3FC4B79B2E5E0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +92,16 @@
 				F9E5978FD417F3709C685BC7 /* Pods_PasswordManager.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		405938A8248FC9FC005EEB93 /* AddAccountViewController */ = {
+			isa = PBXGroup;
+			children = (
+				405938A6248FC9C6005EEB93 /* AddAccountViewController.storyboard */,
+				405938A4248FC997005EEB93 /* AddAccountViewController.swift */,
+			);
+			name = AddAccountViewController;
+			path = RegisteredAccountsViewController/AddAccountViewController;
 			sourceTree = "<group>";
 		};
 		40A71639247C712B008F75C0 /* CreateNewAccountViewController */ = {
@@ -132,10 +161,12 @@
 		40BFAB852465D7C200093BED /* PasswordManager */ = {
 			isa = PBXGroup;
 			children = (
+				07FD9D782480509800EBD0BD /* Models */,
 				40A7163A247C715E008F75C0 /* LoginViewController */,
 				40A7163B247C7178008F75C0 /* SecurityQuestionsViewController */,
 				40A71639247C712B008F75C0 /* CreateNewAccountViewController */,
 				40A7163C247C71A2008F75C0 /* RegisteredAccountsViewController */,
+				405938A8248FC9FC005EEB93 /* AddAccountViewController */,
 				40BFAB862465D7C200093BED /* AppDelegate.swift */,
 				40BFAB882465D7C200093BED /* SceneDelegate.swift */,
 				975BB76D24883C1D0041D6CA /* UserInformation.swift */,
@@ -143,6 +174,7 @@
 				40BFAB8F2465D7C400093BED /* Assets.xcassets */,
 				40BFAB912465D7C400093BED /* LaunchScreen.storyboard */,
 				40BFAB942465D7C400093BED /* Info.plist */,
+				40E6F1F0248FD111003AA536 /* KeychainWrapper.swift */,
 			);
 			path = PasswordManager;
 			sourceTree = "<group>";
@@ -214,6 +246,7 @@
 				40BFAB8E2465D7C200093BED /* Main.storyboard in Resources */,
 				40A71637247C711C008F75C0 /* SecurityQuestions.storyboard in Resources */,
 				0728FE9624712995009305D3 /* RegisteredAccountsView.storyboard in Resources */,
+				405938A7248FC9C6005EEB93 /* AddAccountViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,11 +301,15 @@
 			files = (
 				40A71635247C711C008F75C0 /* CreateNewAccount.swift in Sources */,
 				975BB76E24883C1D0041D6CA /* UserInformation.swift in Sources */,
+				405938A5248FC997005EEB93 /* AddAccountViewController.swift in Sources */,
+				40E6F1F1248FD111003AA536 /* KeychainWrapper.swift in Sources */,
 				0728FE982471349B009305D3 /* RegisteredAccounts.swift in Sources */,
 				40A71634247C711C008F75C0 /* SecurityQuestions.swift in Sources */,
+				07FD9D7524804FEB00EBD0BD /* MasterAccountModel.swift in Sources */,
 				40BFAB872465D7C200093BED /* AppDelegate.swift in Sources */,
 				40A71638247C711C008F75C0 /* LoginViewController.swift in Sources */,
 				40BFAB892465D7C200093BED /* SceneDelegate.swift in Sources */,
+				07FD9D772480500D00EBD0BD /* AppAccountModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
