@@ -35,6 +35,34 @@ class RegisteredAccountsViewController: UIViewController, UITableViewDataSource,
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let account = accounts[indexPath.row]
         
+        // deep linking with DEMO app
+        let appname = account.appName.lowercased()
+        guard let username = account.username else { return }
+        let password = account.password
+        let query = "\(appname)://login?username=\(username)&password=\(password)"
+        openUrl(query)
+        // hard code appName as demo 2
+        // change demo 2 -> add more schema
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            // delete instance of account from firebase
+            let id = accounts[indexPath.row].accountId
+            removeAccountFromFirebase(id: id)
+            accounts.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+        }
+    }
+    
+    func removeAccountFromFirebase(id: String) {
+        guard let userId = Auth.auth().currentUser?.uid else { return }
+        Firestore.firestore()
+            .collection("MasterAccountModel")
+            .document(userId)
+            .collection("AppAccountModel")
+            .document(id)
+            .delete()
     }
     
     @IBOutlet weak var addAccountButton: UIButton!
@@ -50,11 +78,30 @@ class RegisteredAccountsViewController: UIViewController, UITableViewDataSource,
     // 2 call right after define screen -> add new init (init(userId: Int))
     
     @IBAction func addAccountButtonPress(_ sender: UIButton) {
-        let acc = AppAccountModel(appName: "Facebook", email: "jen@test.com", username: "jenna", password: "123123")
-        DatabaseConnector.saveNewAccount(account: acc)
+        let vc = UIStoryboard(name: "AddAccountViewController", bundle: nil).instantiateViewController(identifier: "AddAccountViewController") as! AddAccountViewController
         
-        let acc1 = AppAccountModel(appName: "Instagram", email: "jenInstagram@test.com", username: "jennainstagram", password: "321321")
-        DatabaseConnector.saveNewAccount(account: acc1)
+        vc.delegate = self
+        
+        present(vc, animated: true)
+    }
+    
+    func saveInformation(appname: String, userName: String, password: String) {
+        let id = UUID().uuidString
+        // save appname, id, username, password to firebase
+        KeychainWrapper.saveValue(appname, key: "\(appname).\(id)")
+        KeychainWrapper.saveValue(userName, key: "\(appname).\(id).username")
+        KeychainWrapper.saveValue(password, key: "\(appname).\(id).password")
+    }
+    
+    func getInformation(appname: String, id: String) -> String? {
+        guard let username = KeychainWrapper.getValue(key: "\(appname).\(id).username"),
+        let password = KeychainWrapper.getValue(key: "\(appname).\(id).password") else { return nil }
+        return "\(appname)://login?username=\(username)&password=\(password)"
+    }
+
+    func openUrl(_ url: String) {
+        guard let link = URL(string: url) else { return }
+        UIApplication.shared.open(link, options: [:], completionHandler: nil)
     }
     
     @IBAction func logoutButtonPress(_ sender: Any) {
@@ -81,6 +128,7 @@ class RegisteredAccountsViewController: UIViewController, UITableViewDataSource,
         DatabaseConnector.getAccounts { (accounts, error) in
             if let err = error {
                 // show error message here
+                print(err)
                 return
             }
             
