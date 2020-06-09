@@ -1,0 +1,46 @@
+# Overview
+Password Manager is an iOS mobile application that manages passwords to other app accounts on a mobile device. As this is an iOS app, this code was developed using the Xcode Storyboard and in Swift. Our code can be found in the `PasswordManager` directory here (https://github.com/ECS153/final-project-j2ve/tree/master/PasswordManager/PasswordManager).
+
+There are two main goals for this project. The first goal is to make an appealing, user-friendly, and simple-to-use application that allows users to manage their passwords. The second goal is to make an application that gets users to use non-generic, unique, and complex passwords for their user accounts.
+
+Our updated slides about our project are available here (https://docs.google.com/presentation/d/1dz6lgRXgo42o4hfDJ9VSRGMHvWzh3uVO7UAl8OTvy0s/edit?usp=sharing).
+
+# Design
+As the main issue we are addressing here is password security, we implemented different layers within our app to verify a user’s digital identity. These layers are represented by different screens in our app, which we detail more in-depthly in the following sections.
+
+## Screen: Login Screen
+This is the first screen that pops up upon loading the app. This is where a user can enter in their email and password associated with this Password Manager app in order to gain access into this app in the first place. The entered email and password are checked via the Firebase Authentication service, which we have connected to this application for email and password checking.
+
+If they login successfully, then they are subsequently redirected to the Security Questions screen. If they are a brand new user to this Password Manager app, then they can select the button at the bottom of the screen to redirect themselves to the Create New Account screen instead.
+
+This screen’s code can be seen here (https://github.com/ECS153/final-project-j2ve/tree/master/PasswordManager/PasswordManager/LoginViewController).
+
+## Screen: Create New Account
+On this screen, a new user will be able to create a new user account to associate with this Password Manager app. On the top half of the screen, the user will be able to first enter in their email address and the master password they want to use to enter this app with. The first text field on this section of the screen is set up to check that the entered email address is a valid email address. Similarly, the text field for the master password is set up to ensure that the password that the user creates is at least 6 characters long.
+
+On the bottom half of the screen, the user is instructed to create at least 3 Security Questions and respective answers of their own choosing for this new account. By default, there is only one question and answer text field pair in this section of the screen. The user will have to select the “Add a question” button to create at least 2 more security questions. A scroll view is set up to accommodate the new screen size each time a new question text field is generated. Each generated text field is also set up to check that they have actually been filled in.
+
+Once all text fields are verified to have been filled in properly, a Firebase Authentication method is called on the email and password to create a new user for our app, and a new document named after the generated user id is created in our Firebase database. The email, password, and created Security Questions are then written to this document. A collection is also set up and written to this document to keep track of all future registered accounts that the user wants associated with their Password Manager account.
+
+The code for this screen can be found here (https://github.com/ECS153/final-project-j2ve/tree/master/PasswordManager/PasswordManager/CreateNewAccountViewController).
+
+## Screen: Security Questions
+Should a user’s login attempt be flagged as suspicious, they will need to verify their digital identity by answering 3 randomly selected Security Questions that are associated with the account they are trying to log into. There is a function set up to decide which 3 random questions to select. These questions are pulled from the Firebase database document that is associated with this account. The answers that the user inputs must then match the ones in the database before they can proceed to the Registered Accounts screen.
+
+The code is available here (https://github.com/ECS153/final-project-j2ve/tree/master/PasswordManager/PasswordManager/SecurityQuestionsViewController).
+
+## Screen: Registered Accounts
+This screen displays a list of all of the other app accounts that have been registered and associated with this user account. Each of these accounts can be tapped on for an automatic sign-in to the selected account. The user can also tap on the plus icon on this screen to add a new account for this Password Manager to keep track of. Tapping on this icon redirects the user to an Add Account screen.
+
+This code can be seen here (https://github.com/ECS153/final-project-j2ve/tree/master/PasswordManager/PasswordManager/RegisteredAccountsViewController).
+
+## Screen: Add Account
+On this screen, a user can enter in the account email or username, password, and app name of the new account that they want the Password Manager to manage. The information inputted into these text fields is then written to a document that is sent to the Firebase database under the user’s FIrebase collection for registered accounts.
+
+# Experiments and Results
+To test our app, we created several dummy accounts on our app and stored username and password information about other mobile app accounts to them. Next we made sure that we could log in to each of these dummy accounts. For each of these accounts, we then added in the usernames and passwords to several other app accounts that we wanted this Password Manager app to manage. We would then log out of these accounts and log back in to ensure that this information had been saved to each of these dummy accounts.
+
+Afterwards, we asked for a few family members to test this app to see how they felt about our app, since as the developers of this project, we are prone to bias. The general consensus was that having only to memorize a master password to access this app and its services was one of the most appealing features of this app, and that there were just enough layers for users to be mindful of how important securing their passwords were without being too annoying.
+
+We had also hoped that this app would make users aware of the importance of having unique and complex passwords in keeping their accounts secure, but those we had asked to test this app all stated that they were already aware of this. Nonetheless, we are glad that they are aware that they do not necessarily need to sacrifice easier accessibility to accounts for security.
+
