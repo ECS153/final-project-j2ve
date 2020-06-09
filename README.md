@@ -35,7 +35,9 @@ This screen displays a list of all of the other app accounts that have been regi
 This code can be seen here (https://github.com/ECS153/final-project-j2ve/tree/master/PasswordManager/PasswordManager/RegisteredAccountsViewController).
 
 ## Screen: Add Account
-On this screen, a user can enter in the account email or username, password, and app name of the new account that they want the Password Manager to manage. Each time the user adds an account, the information they input into these text fields is written to a new document that gets stored within a Firebase collection called registered accounts.
+On this screen, a user can enter in the account email or username, password, and app name of the new account that they want the Password Manager to manage. The information inputted into these text fields is then written to a document that is sent to the Firebase database under the user’s FIrebase collection for registered accounts.
+This code can be seen here (https://github.com/ECS153/final-project-j2ve/tree/master/PasswordManager/PasswordManager/AddAccountViewController).
+
 
 # Experiments and Results
 To test our app, we created a master app account, then several dummy accounts on our app by storing username and password information about other mobile app accounts. Next we made sure that we could log into each of these dummy accounts before adding them into the Password Manager app to manage (using the previously mentioned master account). We would then log out of these accounts and log back in to ensure that each of these dummy accounts were stored and retrieved correctly from the registered accounts collection in the master account.
