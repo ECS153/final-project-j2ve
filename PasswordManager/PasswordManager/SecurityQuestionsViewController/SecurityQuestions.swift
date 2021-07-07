@@ -110,6 +110,9 @@ class SecurityQuestionsViewController: UIViewController {
                     chosenQuestions.append(secondQuestion)
                     self.secondSecurityQuestion.text = secondQuestion
                 }
+                // Update current timestamp as new timestamp after security questions are answered
+                document.reference.updateData(["Timestamp" : Timestamp(date: Date())])
+                                
                 // Set third question
                 if let thirdQuestion = self.chooseRandomQuestion() {
                     chosenQuestions.append(thirdQuestion)
@@ -117,7 +120,7 @@ class SecurityQuestionsViewController: UIViewController {
                 }
                 
             }
-            // If document does not exist, print
+            //If document does not exist, print
             else {
                 debugPrint("Document does not exist for this user")
             }

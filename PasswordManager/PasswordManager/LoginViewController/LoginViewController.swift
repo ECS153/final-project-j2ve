@@ -68,27 +68,59 @@ class LoginViewController: UIViewController {
                     case .wrongPassword, .userNotFound:
                         self.showErrorMessage("Your account does not exist or password is invalid")
                     default:
-                        debugPrint("Other error")
+                        debugPrint("Other error", error!._code)
                 }
                 return
             }
             // User successfully signed in, segue to the security questions screen
             else {
+                debugPrint("User successfully signed in!")
                 // set global variable userUID
                 userUID = result!.user.uid
                 
+                let db = Firestore.firestore()
+                let docRef = db.collection("MasterAccountModel").document(userUID)
                 DatabaseConnector.saveMasterPassword(password: masterPassword!)
                 
-                
-                let storyboard = UIStoryboard(name: "SecurityQuestions", bundle: nil)
-                
-                // casting view controller as a registered accounts view controller
-                // forced unwrapping (!):
-                // using it here b/c we potentially want to set some variables on that object (navigation has to use downcast)
-                // if it's not a registered accounts view controller, then what do you do?  Should just crash the app
-                let viewController = storyboard.instantiateViewController(withIdentifier: "SecurityQuestionsViewController") as! SecurityQuestionsViewController
-                
-                self.navigationController?.pushViewController(viewController, animated: true)
+                    
+                docRef.getDocument { (document, error) in
+                           // If there is an error, print error
+                           if (error != nil) {
+                               debugPrint(error?.localizedDescription)
+                           }
+                           
+                           else if let document = document, document.exists {
+                                debugPrint("Document exists for user")
+                                // get user's recorded timestamp
+                                let timestamp = document.data()!["Timestamp"] as? Timestamp
+                                let timestampDate = timestamp!.dateValue()
+                            
+                                // get time difference between now and recorded timestamp in minutes
+                                let timeDifference = (Int(Date().timeIntervalSince(timestampDate))) / 60
+                                debugPrint("Time difference is", timeDifference)
+                            
+                            if (timeDifference >= 30) { // prompt security questions
+                                debugPrint("prompt security")
+                                let storyboard = UIStoryboard(name: "SecurityQuestions", bundle: nil)
+                                let viewController = storyboard.instantiateViewController(withIdentifier: "SecurityQuestionsViewController") as! SecurityQuestionsViewController
+                                
+                                self.navigationController?.pushViewController(viewController, animated: true)
+                            } else { // prompt accounts
+                                debugPrint("prompt accounts")
+                                document.reference.updateData(["Timestamp" : Timestamp(date: Date())])
+                                let registeredAccountController = UIStoryboard(name: "RegisteredAccountsView", bundle: nil).instantiateViewController(withIdentifier: "RegisteredAccountsViewController") as! RegisteredAccountsViewController
+                                
+                                let navigationController = UINavigationController(rootViewController: registeredAccountController)
+                                navigationController.modalPresentationStyle = .fullScreen
+                                
+                                self.present(navigationController, animated: true)
+                            }
+                           }
+                           // If document does not exist, print
+                           else {
+                               debugPrint("Document does not exist for this user")
+                           }
+                       }
             }
         }
     }
